@@ -1,3 +1,6 @@
 This is my first file in Git 
 It's just a test
 
+I can modify this file on GitHub.
+I want to see if I can download these changes in my local code.
+
