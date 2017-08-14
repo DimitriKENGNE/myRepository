@@ -1,0 +1,3 @@
+Je m'exercer dans Git et GitHub
+
+Ce n'est pas facile mais c'est quand même passionant.
