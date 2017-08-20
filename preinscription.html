@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Première page du Site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {background-color:#FFE4C4; text-align:justify;}
+h1   {background-color:#7FFF00; color:blue; font-family:verdana; font-size:300%; text-align:center;}
+h2   {color:green; font-family:courier; font-size:200%;}
+h4    {color:blue; font-family:courier; font-size:150%;}
+p	 { color:#4B0082;  padding:10px;}
+
+#p01 {color:#4B0089; font-family:verdana; }
+
+div	{ border: 2px solid red; padding:10px;}
+span.name { color:blue;}
+
+a:link {
+    color: green; 
+    background-color: transparent; 
+    text-decoration: none;}
+
+a:visited {
+    color: green;
+    background-color: transparent;
+    text-decoration: underline;}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;}
+
+a:active {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;}
+    
+table { border-spacing: 10px;}
+th, td {
+    border: 2px solid red;
+    padding: 20px;
+    font-size: 200%;
+    text_align:center;
+    background-color: white;}
+
+
+
+
+</style>
+
+</head>
+<body >
+
+<h1>Université DIMitri I<sup>er</sup></h1>
+
+
+<div>
+	<a href="https://www.site_inexistant.com">Préinscription</a>
+	<a href="https://www.site_inexistant.com">Inscription</a>
+	<a href="https://www.site_inexistant.com">Compte etudiant</a>
+	<a href="https://www.site_inexistant.com">Compte enseignant</a>
+  
+</div>
+
+    	
+<div>
+<form action="inexistante.php">
+	<fieldset>
+    	<legend>Informations</legend>
+        Genre:<br>
+        <input type="radio" name="gender" value="H">
+        Homme 
+        <input type="radio" name="gender" value="F" checked>
+        Femme
+        <br>
+        Nom:<br>
+        <input type="text" name="nom"><br>
+        Prenom:<br>
+        <input type="text" name="prenom"><br>
+        Date de Naissance:<br>
+        <input type="date" name="bday"><br>
+        Lieu de naissance:<br>
+        <input type="text" name="bplace"><br>
+       	Ville de résidence:<br>
+        <input type="text" name="town"><br>
+      	
+        
+        <br>
+        <input type="submit" value="Valider"> <input type="reset" value="Reprendre">
+      </fieldset>
+</form>
+
+
+
+</div>
+
+<hr>
+<div>
+<address>
+Written by Dimitri KENGNE.<br> 
+Follow us on:<a href="https://www.facebook.com/micheldimitri.kengne" target="_blank">facebook</a>
+<br>
+Douala, Cameroun<br>
+Email:m.dimitri.kengne@gmail.com
+</address>
+</div>
+</body>
+</html>
