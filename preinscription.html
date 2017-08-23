@@ -68,26 +68,94 @@ th, td {
 <div>
 <form action="inexistante.php">
 	<fieldset>
-    	<legend>Informations</legend>
+    	<legend><b>Informations</b></legend>
         Genre:<br>
-        <input type="radio" name="gender" value="H">
+        <input type="radio" name="gender" value="H" autofocus>
         Homme 
-        <input type="radio" name="gender" value="F" checked>
+        <input type="radio" name="gender" value="F">
         Femme
         <br>
         Nom:<br>
-        <input type="text" name="nom"><br>
+        <input type="text" name="nom" required><br>
         Prenom:<br>
-        <input type="text" name="prenom"><br>
+        <input type="text" name="prenom" required><br>
         Date de Naissance:<br>
-        <input type="date" name="bday"><br>
+        <input type="date" name="bday" required><br>
         Lieu de naissance:<br>
         <input type="text" name="bplace"><br>
        	Ville de résidence:<br>
         <input type="text" name="town"><br>
-      	
+        Nationnalité<br>
+      	<select name="nation">
+        	<option value="cameroun">Cameroun</option>
+            <option value="gabon">Gabon</option>
+            <option value="congo">Congo</option>
+            <option value="centrafrique">République Centrafricaine</option>
+            <option value="tchad">Tchad</option>
+            <option value="guinee">Guinée Equatoriale</option>
+            <option value="autre">Autre</option>
+		</select><br>
+        Situation Matrimoniale<br>
+      	<select name="status">
+        	<option value="celibataire">Célibataire</option>
+            <option value="marie">Marié(e)</option>
+            <option value="divorce">Divorcé(e)</option>
+            <option value="veuf">veuf / veuve</option>
+		</select><br>
+        Région d'Origine<br>
+        <select name="region">
+        	<option value="littoral">Littoral</option>
+            <option value="ouest">Ouest</option>
+            <option value="centre">Centre</option>
+            <option value="sud">Sud</option>
+            <option value="est">Est</option>
+            <option value="nordOuest">Nord-Ouest</option>
+            <option value="sudOuest">Sud-Ouest</option>
+            <option value="adamaoua">Adamaoua</option>
+            <option value="extremeNord">Extreme-Nord</option>
+            <option value="nord">Nord</option>
+		</select><br>
+        Département<br>
+        <select name="departement">
+            <option value="nkam">Nkam</option>
+            <option value="wouri" selected>Wouri</option>
+            <option value="moungo">Moungo</option>
+            <option value="sanagaMaritme">Sanaga Maritme</option>
+        </select><br>
+    </fieldset>
         
-        <br>
+    <fieldset>
+    	<legend><b>Communication et Contact</b></legend>
+        Langues parlées<br>
+        <input type="checkbox" name="lang1" value="anglais">Anglais<br>
+        <input type="checkbox" name="lang2" value="français" checked>Français<br>
+        <input type="checkbox" name="lang3" value="Arabe">Arabe<br>
+        <input type="checkbox" name="lang4" value="chinois">Chinois<br>
+        Votre langue principale:
+        <select name="langP">
+        	<option value="anglais">Anglais</option>
+            <option value="français">Français</option>
+            <option value="Arabe">Arabe</option>
+            <option value="chinois">Chinois</option>
+        </select><br>
+        Numéro de téléphone<br>
+        <input type="number" name="tel" required><br>
+        Boîte postale<br>
+        <input type="text" name="bp" required><br>
+        Email<br>
+        <input type="email" name="mailbox" required>
+    </fieldset>
+    
+     <fieldset>
+    	<legend><b>Présenter vous en quelques mots.</b></legend><br>
+        <textarea name="presentation" rows="10" cols="70">
+		Votre présentation
+		</textarea>
+    </fieldset>
+        
+
+
+        <br><br>
         <input type="submit" value="Valider"> <input type="reset" value="Reprendre">
       </fieldset>
 </form>
