@@ -1,20 +1,72 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-<title>Première page du Site</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-body {background-color:#FFE4C4; text-align:justify;}
-h1   {background-color:#7FFF00; color:blue; font-family:verdana; font-size:300%; text-align:center;}
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header {padding: 5px; 
+		clear: left;
+        background-color:#FF05DD;
+        color:blue; 
+        font-family:verdana; 
+        font-size:200%; 
+        text-align:center;}
+
+footer {
+    padding: 1em;
+    color: white;
+    background-color: #AAAAAA;
+    clear: left;
+    text-align: center;
+}
+
+aside {
+    float: right;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+aside ul a {
+    text-decoration: none;
+}
+
+
+nav {
+    float: left;
+    max-width: 200px;
+    margin: 0;
+    padding: 1em;
+}
+
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+     background-color:#FFE4C4
+    padding: 1em;
+    overflow: hidden;}
+section {
+     background-color:#FFFFFF;
+    padding: 3px;
+    overflow: hidden;}
+body {background-color:#FFF; text-align:justify;}
+h1   {}
 h2   {color:green; font-family:courier; font-size:200%;}
 h4    {color:blue; font-family:courier; font-size:150%;}
 p	 { color:#4B0082;  padding:10px;}
 
 #p01 {color:#4B0089; font-family:verdana; }
 
-div	{ border: 2px solid red; padding:10px;}
+div	{ background-color:#DDDDDD; padding:10px;}
 span.name { color:blue;}
 
 a:link {
@@ -45,35 +97,46 @@ th, td {
     text_align:center;
     background-color: white;}
 
-
-
-
 </style>
-
 </head>
-<body >
-
-<h1>Université DIMitri I<sup>er</sup></h1>
+<body>
 
 
-<div>
-<a href="preinscription.html">Préinscription</a>
-<a href="https://www.site_inexistant.com">Inscription</a>
-<a href="https://www.site_inexistant.com">Compte etudiant</a>
-<a href="https://www.site_inexistant.com">Compte enseignant</a>
+
+<header>
+   <h1>Université DIMitri I<sup>er</sup></h1>
+</header>
   
-</div>
+<nav>
 
-<div>
-  <p id=p01>Sur cette page, vous trouverez:</p>
-<a href="#C1">Présentation Générale</a><br>
-<a href="#C2">Historique</a><br>
-<a href="#C3">Les facultés</a><br>
-<a href="#C4">Nos grandes écoles</a><br><p>w3schools_HTML</p>
-</div>
+<section>
+ <img src="PHOTO.jpg" width=200px heigth=300px alt="Apprendre" style="float:left; padding:10px" ><br>
+ Le recteur
+ </section><br>
+ 
+ <section>
+ 	<p id=p01>Sur cette page, vous trouverez:</p>
+	<a href="#C1">Présentation Générale</a><br>
+	<a href="#C2">Historique</a><br>
+	<a href="#C3">Les facultés</a><br>
+	<a href="#C4">Nos grandes écoles</a><br>				<p>w3schools_HTML</p>
+ </section>
+ 
+</nav>
+<aside>
 
+	<section>
+  <ul>
+    <li><a href="preinscription.html">Préinscription</a></li>
+    <li><a href="https://www.site_inexistant.com">Inscription</a></li>
+    <li><a href="https://www.site_inexistant.com">Compte etudiant</a></li>
+    <li><a href="https://www.site_inexistant.com">Compte enseignant</a></li>  
+  </ul>
+ </section><br>
+</aside>
 
-<h2 id="C1">Présentation Générale</h2>
+<article>
+  <h2 id="C1">Présentation Générale</h2>
 <hr>
 
 <div>
@@ -186,17 +249,19 @@ Car comme René Descartes le disait:
 </div>
 
 
-<img src="PHOTO.jpg" width=200px heigth=300px alt="Apprendre" style="float:left; padding:10px" >
+
 
 <hr>
-<div>
-<address>
+</article>
+
+<footer><address>
 Written by Dimitri KENGNE.<br> 
 Follow us on:<a href="https://www.facebook.com/micheldimitri.kengne" target="_blank">facebook</a>
 <br>
 Douala, Cameroun<br>
-Email:m.dimitri.kengne@gmail.com
-</address>
+Email:m.dimitri.kengne@gmail.com</footer>
+
 </div>
+
 </body>
 </html>
