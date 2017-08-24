@@ -1,0 +1,96 @@
+
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header {padding: 5px; 
+		clear: left;
+        background-image: url("arrierePlan.jpg");
+        color:blue; 
+        font-family:verdana; 
+        font-size:200%; 
+        text-align:center;}
+
+footer {
+    padding: 1em;
+    color: white;
+    background-color: #AAAAAA;
+    clear: left;
+    text-align: center;
+}
+
+aside {
+    float: right;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+aside ul a {
+    text-decoration: none;
+}
+
+
+nav {
+    float: left;
+    max-width: 200px;
+    margin: 0;
+    padding: 1em;
+}
+
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+     background-color:#FFE4C4
+    padding: 1em;
+    overflow: hidden;}
+section {
+     background-color:#FFFFFF;
+    padding: 3px;
+    overflow: hidden;}
+body {background-color:#FFF; text-align:justify;}
+h1   {text-shadow: 3px 2px red;}
+h2   {color:green; font-family:courier; font-size:200%;}
+h4    {color:blue; font-family:courier; font-size:150%;}
+p	 { color:#4B0082;  padding:10px; text-indent:50px; line-height:2,0;} /*l'attribut line-height ne fonctionne pas. */
+
+#p01 {color:#4B0089; font-family:verdana; }
+
+div	{ background-color:#DDDDDD; padding:10px;}
+span.name { color:blue;}
+
+a:link {
+    color: green; 
+    background-color: transparent; 
+    text-decoration: none;}
+
+a:visited {
+    color: green;
+    background-color: transparent;
+    text-decoration: underline;}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;}
+
+a:active {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;}
+    
+table { border-spacing: 10px; width: 100%; margin-right: 5px;}
+th, td {
+    border: 2px outset red; /*Je veux que les bordures soient dans le style outset. Mais ça ne marche pas */
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 200%;
+    text-align: center;
+    background-color: white;}
