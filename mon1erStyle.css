@@ -12,10 +12,31 @@ header {padding: 5px;
         font-size:200%; 
         text-align:center;}
 
+#div01 {background-color:#AAA;
+        color:white; 
+		font-size:200%;
+        font-family:calibri; 
+        text-align:left;
+}
+
+
+#div01 a:link, div01 a:visited {
+    background-color: #AAA;
+    color: white;
+    padding: 2px 2px;
+    text-align: center;
+    text-decoration: none;
+	display: inline-block;
+}
+
+#div01 a:hover, div01 a:active {
+background-color: black;
+}
+
 footer {
     padding: 1em;
     color: white;
-    background-color: #AAAAAA;
+    background-color: #909090;
     clear: left;
     text-align: center;
 }
@@ -58,6 +79,7 @@ section {
 body {background-color:#FFF; text-align:justify;}
 h1   {text-shadow: 3px 2px red;}
 h2   {color:green; font-family:courier; font-size:200%;}
+h3	 {color:blue; font-family:calibri; text-align:center; background-color:#BBBBBB;}
 h4    {color:blue; font-family:courier; font-size:150%;}
 p	 { color:#4B0082;  padding:10px; text-indent:50px; line-height:2,0;} /*l'attribut line-height ne fonctionne pas. */
 
@@ -72,7 +94,7 @@ a:link {
     text-decoration: none;}
 
 a:visited {
-    color: green;
+color: green;
     background-color: transparent;
     text-decoration: underline;}
 
