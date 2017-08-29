@@ -1,0 +1,8 @@
+table { border-spacing: 10px; width: 100%; margin-right: 5px;}
+th, td {
+    border: 2px outset red; /*Je veux que les bordures soient dans le style outset. Mais รงa ne marche pas */
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 150%;
+    text-align: center;
+    background-color: white;}

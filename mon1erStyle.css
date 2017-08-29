@@ -14,9 +14,11 @@ header {padding: 5px;
 
 #div01 {background-color:#AAA;
         color:white; 
-		font-size:200%;
+		font-size:100%;
         font-family:calibri; 
         text-align:left;
+		padding: 0px;
+		border-bottom: 7px solid #AAFFAA;
 }
 
 
@@ -107,12 +109,8 @@ a:active {
     color: blue;
     background-color: transparent;
     text-decoration: none;}
-    
-table { border-spacing: 10px; width: 100%; margin-right: 5px;}
-th, td {
-    border: 2px outset red; /*Je veux que les bordures soient dans le style outset. Mais ça ne marche pas */
-    border-radius: 25px;
-    padding: 20px;
-    font-size: 200%;
-    text-align: center;
-    background-color: white;}
+
+
+	
+	
+	
