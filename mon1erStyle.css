@@ -22,7 +22,7 @@ header {padding: 5px;
 }
 
 
-#div01 a:link, div01 a:visited {
+#div01 a:link, #div01 a:visited {
     background-color: #AAA;
     color: white;
     padding: 2px 2px;
@@ -110,7 +110,36 @@ a:active {
     background-color: transparent;
     text-decoration: none;}
 
+#table01 { border-spacing: 10px; width: 100%; margin-right: 5px;}
+#table01 th, #table01 td {
+    border: 2px outset red; /*Je veux que les bordures soient dans le style outset. Mais ça ne marche pas */
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 150%;
+    text-align: center;
+    background-color: white;}
 
-	
+#table02 { border-collapse: collapse;}
+#table02	th { 
+		font-size: 100%;
+		text-align: center;
+		background-color: #AA00FF;
+		color: white;
+		border-bottom: 2px solid green;
+		border-right: 2px solid green;
+		 
+		}
+#table02	td { 
+		
+		font-size: 100%;
+		text-align: left;
+		vertical-align: top;
+		width: 100px;
+		border-bottom: 2px solid green;
+		
+		}
+#table02	tr:nth-child(even){background-color: #f2f2f2}
+#table02	tr:hover{background-color: #f5f5f5}
+
 	
 	
