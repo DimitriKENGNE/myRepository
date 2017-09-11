@@ -3,6 +3,7 @@
 <head>
 <title> Bienvenue à l'université DIMitri Ier</title>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="mon1erStyle.css">
 <style>
 
@@ -19,15 +20,16 @@
 	</div>
 </header>
   
-  <div id="div01">
-	<a href="index.html" style="background-color:#AAFFAA">Accueil</a>
-	<a href="Presentation_Univ.html">Présentation_UD</a>
-	<a href="preinscription.html">Préinscription</a>
-    <a href="inscription.html">Inscription</a>
-	<a href="conseil_et_orientation.html">Conseil et Orientation</a>
-    <a href="https://www.site_inexistant.com">Etudiant</a>
-    <a href="https://www.site_inexistant.com">Enseignant</a>
-  </div>
+  <ul class="navig">
+	<li><a href="index.html" class="actif">Accueil</a></li>
+	<li><a href="Presentation_Univ.html">Présentation_UD</a></li>
+	<li><a href="preinscription.html">Préinscription</a></li>
+    <li><a href="inscription.html">Inscription</a></li>
+	<li><a href="conseil_et_orientation.html">Conseil et Orientation</a></li>
+    <li><a href="#etudiant">Etudiant</a></li>
+    <li><a href="#enseignant">Enseignant</a></li>
+	<li class="droite"><a href="#about" >A propos</a></li>
+  </ul>
   
 <nav>
 
@@ -47,21 +49,16 @@
 </nav>
 <aside>
 
-	<div>
-		<div id="div03">
+	<div class="bottom_space">
+		<div class="sujet">
 			<h3>LES CONCOURS<h3>
 		</div>
-   <br>
- <br>
- <br>
- <br>
- <br>
- <br>
+   
  </div><br>
 
  
  <div>
- <div id="div03">
+ <div class="sujet">
   <h3>Autres Articles</h3>
  </div>
   <ul>
@@ -72,10 +69,10 @@
   
  </div><br>
  <div>
-  <div id="div03">
+  <div class="sujet">
 	<h3>A la Une</h3>
 </div>
- <div id="div02">
+ <div class="defilement">
 
 	<p>L'université DIMitri Ier est une de mes imaginations pour m'exercer à la création d'un site WEB. En effet je fais mes premiers dans la conception de site WEB et je ne suis actuellement qu'à l'étape du HTML. 
 Pour m'exercer je saisi mon code à partir du site de w3schools. Lorsque le code est bon, je le copie dans NOTEPAD++ et je le sauve dans mon repertory. 
@@ -181,7 +178,7 @@ Car comme René Descartes le disait:
 <iframe src="https://www.w3schools.com/html/default.asp"  name="iframe_a"></iframe>
 <br>
 <div style="overflow-x:auto;">
-<table id="table01">    <!--Ce tableau ne s'affiche pas comme je veux -->
+<table class="sites_utiles">
   <tr>
     <th style="padding: 5px;border: 1px solid white"><a href="https://www.w3schools.com/html/default.asp" target="iframe_a">w3schools_HTML</a></th>
     <th style="padding: 5px;border: 1px solid white"><a href="https://www.w3schools.com/css/default.asp" target="iframe_a">w3schools_CSS</a></th> 
@@ -195,6 +192,7 @@ Car comme René Descartes le disait:
 </table>
 </div>
 </div>
+<p>Cliquer sur les boutons ci-dessous pour voir apparaître la page dans la fenêtre.</p>
 
 <h2>Nos Facultés et Ecoles</h2>
 <hr>
@@ -202,7 +200,7 @@ Car comme René Descartes le disait:
 <h4 id="C3">Les Facultés</h4>
 
 <p id="p01"> Vous avez la possibilité de poursuivre vos édutes dans l'une des facultés suivantes</p>
-<table id="table02">
+<table class="faculties">
   <tr>
     <th><a href="https://www.site_inexistant.com">Faculté des sciences</a></th>
     <th><a href="https://www.site_inexistant.com">Faculté des Lettres</a></th> 
@@ -220,7 +218,7 @@ Car comme René Descartes le disait:
 <h4 id="C4">Nos grandes écoles</h4>
 
 <p id="p01"> Vous pouvez aussi acceder à l'une des écoles suivantes par concours ou par étude de dossier</p>
-<table id="table02">
+<table class="faculties">
   <tr>
     <th><a href="https://www.site_inexistant.com">Faculté des génie industriel</a></th>
     <th><a href="https://www.site_inexistant.com">ENS</a></th> 

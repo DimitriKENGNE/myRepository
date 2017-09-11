@@ -1,0 +1,50 @@
+
+/*****************************************************************************************************/
+
+/* ******************* Création d'une barre de navigation utilisant des div   ********************** */ 
+
+/*****************************************************************************************************/
+#div01 {background-color:#AAA;
+        color:white; 
+		font-size:100%;
+        font-family:calibri; 
+        text-align:left;
+		padding: 0px;
+		border-bottom: 7px solid #AAFFAA;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		}
+
+
+#div01 a:link, #div01 a:visited {
+    background-color: #AAA;
+    color: white;
+    padding: 2px 2px;
+    text-align: center;
+    text-decoration: none;
+	display: inline-block;
+	border-right: 2px solid #AAFFAA;
+}
+
+#div01 a:hover, div01 a:active {
+background-color: black;
+}
+
+
+/*****************************************************************************************************/
+
+/* ******************* Création de cases utilisant les cellules d'un tableau  ********************** */ 
+
+/*****************************************************************************************************/
+
+#table03 { border-spacing: 10px; width:100%; margin:auto}
+#table03 th, #table03 td {
+    border: 2px outset red; 
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 150%;
+    text-align: center;
+    background-color: white;}
+
+#table03 th:hover, #table03 td:hover {background-color:#CFA;}
