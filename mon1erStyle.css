@@ -70,7 +70,6 @@ ul.navig li.droite {
 	float: right;
 }
 
-.dropdown
 
 
 /* @media screen and (max-width: 400px){           
@@ -101,6 +100,7 @@ nav {
     margin: 0;
     padding: 1em;
 	background-color: #EEE;
+	display:block;
 }
 
 nav:hover, aside:hover{ 
@@ -132,6 +132,7 @@ aside {
     max-width: 250px;
     margin: 0;
     padding: 0px;
+	display:block;
 }
 
 aside ul {
@@ -177,7 +178,8 @@ article {
     border-left: 1px solid gray;
     background-color:#FFE4C4;
     padding: 1em;
-    overflow: hidden;}
+    overflow: auto;
+}
 
 article p::first-letter {
 	font-size: 300%;
@@ -186,32 +188,40 @@ article p::first-letter {
 
 .formulaire { background-color:#EEE; padding: 0px 5px; border-radius: 20px; margin:auto; width:50%;}
 
-table.sites_utiles { border-spacing: 10px; width:100%; margin:auto}
-table.sites_utiles th, table.sites_utiles td {
+table.sites_utiles { border-spacing: 10px; width:100%; margin:auto }
+table.sites_utiles th a, table.sites_utiles td a {
     border-radius: 25px;
-    padding: 20px;
+    padding: 5px;
+	border: 1px solid white;
     font-size: 150%;
     text-align: center;
     background-color: cyan;
 	opacity:0.3;
+	text-decoration: none;
+	display: block;
 }
 
-table.sites_utiles th:hover, table.sites_utiles td:hover {
+table.sites_utiles th a:hover, table.sites_utiles td a:hover {
 	background-color:#CFA;
 	opacity:1.0;
 }
 
-table.faculties { border-spacing: 20px; width:100%; margin:auto}
-table.faculties th, table.faculties td {
+table.faculties { border-spacing: 20px; width:100%; margin:auto;}
+
+table.faculties th a, table.faculties td a {
     border-radius: 25px;
 	box-shadow: 10px 10px 5px darkcyan;
-    padding: 20px;
+    padding: 20px ; 
     font-size: 150%;
-    text-align: center;
+    text-align:center;
     background-color: rgba(76, 175, 100, 0.3);
+	height: 100px;
+	text-decoration: none;
+	display:block;
 }
 
-table.faculties th:hover, table.faculties td:hover {
+
+table.faculties th a:hover, table.faculties td a:hover {
 	background-color:#CFA;
 	opacity:1.0;
 }
@@ -238,6 +248,63 @@ table.majors	td {
 		}
 table.majors	tr:nth-child(even){background-color: #f2f2f2}
 table.majors	tr:hover{background-color: #f5f5f5}
+
+
+
+/**dropdown pour les textes****/
+
+.dropdown-text {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-text-content {
+	border: none;
+	display: none;
+	position: absolute;
+	background-color: rgba(256, 256, 256, 0.7);
+	min-width:160px;
+	box-shadow: 10px 10px 2px rgba (0, 0, 0, 0.2);
+	padding: 50px 10px;
+	z-index: 1;
+}
+
+.dropdown-text:hover  .dropdown-text-content {
+	display: block;
+}
+
+
+
+/**dropdown pour les images****/
+
+.dropdown-image {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-image-content {
+	border: none;
+	display: none;
+	position: absolute;
+	background-color: rgba(256, 256, 256, 0.7);
+	min-width:160px;
+	box-shadow: 10px 10px 2px rgba (0, 0, 0, 0.2);
+	padding: 0px;
+	z-index: 1;
+}
+
+.dropdown-image:hover  .dropdown-image-content {
+	display: block;
+}
+
+
+
+
+
+
+
+
+
 
 article div	{ background-color:#DDDDDD; padding:10px; border-radius: 0px 25px;}
 
