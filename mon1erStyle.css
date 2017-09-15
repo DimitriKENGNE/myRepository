@@ -119,10 +119,15 @@ nav img:hover {
 
 section {
      background-color:#FFFFFF;
-    padding: 3px;
-    overflow: hidden;
+    padding: 3px;    
 }
 
+section.hide{
+	overflow: hidden;
+	padding: 0px;
+	margin: auto;
+	width: 100%;
+}
 
 /**  C O L O N N E   D E   D R O I T E   ****************************************************************************************************/
 /********************************************************************************************************************************************/
@@ -260,6 +265,7 @@ table.majors	tr:hover{background-color: #f5f5f5}
 
 .dropdown-text-content {
 	border: none;
+	border-radius:0px;
 	display: none;
 	position: absolute;
 	background-color: rgba(256, 256, 256, 0.7);
@@ -299,11 +305,45 @@ table.majors	tr:hover{background-color: #f5f5f5}
 
 
 
+/*   pour les tooltip   */
 
+.tooltip {
+	position: relative;
+}
 
+.tooltip  .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 100%;
+    margin-left: -60px;
+	
+	 opacity: 0;
+    transition: opacity 5s;
+}
 
+.tooltip .tooltiptext::after {
+	content:" ";
+	position: absolute;
+	top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
 
-
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}
 
 
 article div	{ background-color:#DDDDDD; padding:10px; border-radius: 0px 25px;}
