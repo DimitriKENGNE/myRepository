@@ -48,7 +48,7 @@ ul.navig li {
 	float: left;
 }
 
-ul.navig li a:link, ul.navig li a:visited {
+ul.navig li a:link, ul.navig li a:visited, .dropbtn {
     background-color: #888;
     color: white;
     padding: 7px 10px;
@@ -58,7 +58,7 @@ ul.navig li a:link, ul.navig li a:visited {
 	border-right: 1px solid #AAFFAA;
 }
 
-ul.navig li a:hover, ul.navig li a:active {
+ul.navig li a:hover, ul.navig li a:active, .dropdown-link:hover .dropbtn {
 background-color: black;
 }
 
@@ -67,8 +67,35 @@ ul.navig li a.actif {
 	background-color: #AAFFAA;
 }
 
+
+
 ul.navig li.droite {
 	float: right;
+}
+
+/**dropdown pour les liens****/
+
+.dropdown-link {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-link-content {
+	border: none;
+	display: none;
+	position: static;
+	background-color: rgba(256, 256, 256, 0.7);
+	min-width:160px;
+	box-shadow: 10px 10px 2px rgba (0, 0, 0, 0.2);
+	padding: 5px 10px;
+	overflow: visible;
+	z-index: 1;
+}
+
+.dropdown-link:hover  .dropdown-link-content {
+	display:block;
+	overflow: visible;
+	
 }
 
 
@@ -405,6 +432,7 @@ h2   {color:green; font-family:courier; font-size:200%;}
 article h3	 {color:blue; font-family:calibri; text-align:center; background-color:#BBBBBB;}
 img {
 	border-radius: 10px;
+	object-fit: contain;
 }
 h4    {color:blue; font-family:courier; font-size:150%;}
 p	 { color:#4B0082;  padding:10px; text-indent:50px; line-height:2,0;} /*l'attribut line-height ne fonctionne pas. */
@@ -474,10 +502,12 @@ input[type=submit] {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
+	outline:none;   
     cursor: pointer;
 	-webkit-transition: width 1s;
 	transition: width 1s;
+	box-shadow: 0 9px #999;
 }
 
 input[type=reset] {
@@ -487,10 +517,12 @@ input[type=reset] {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
+	outline:none;
     cursor: pointer;
 	-webkit-transition: width 1s;
 	transition: width 1s;
+	box-shadow: 0 9px #999;
 }
 
 input[type=submit]:hover {
@@ -503,6 +535,15 @@ input[type=reset]:hover {
 	width: 200px;
 }
 
+input[type=submit]:active {
+	box-shadow: 0 5px #666;
+	transform: translateY(4px)
+}
+
+input[type=reset]:active {
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
 input:focus {
 background-color:#EEE ;
 }
