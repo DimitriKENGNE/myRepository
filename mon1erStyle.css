@@ -30,25 +30,28 @@ header div {
 /**       B A R R E   D E   N A V I G A T I O N   *******************************************************************************************/
 /********************************************************************************************************************************************/
 
-ul.navig {background-color:#AAA;
+.navig {
+		width: 100%;
+}
+
+.navig ul {background-color:#AAA;
         color:white; 
         font-family:calibri; 
         text-align:left;
 		padding: 0px;
 		margin: 0px;
 		border-bottom: 5px solid #AAFFAA;
-		position: fixed;
-		top: 0;
 		width: 100%;
-		overflow: hidden;
+		overflow: hidden; 
 		list-style-type: none;
+		
 }
 
-ul.navig li {
+.navig li {
 	float: left;
 }
 
-ul.navig li a:link, ul.navig li a:visited, .dropbtn {
+.navig li a, .dropbtn {
     background-color: #888;
     color: white;
     padding: 7px 10px;
@@ -58,45 +61,59 @@ ul.navig li a:link, ul.navig li a:visited, .dropbtn {
 	border-right: 1px solid #AAFFAA;
 }
 
-ul.navig li a:hover, ul.navig li a:active, .dropdown-link:hover .dropbtn {
+.navig li a:hover, .dropdown:hover .dropbtn {
 background-color: black;
 }
 
 
-ul.navig li a.actif {
+
+
+
+
+.navig li.droite {
+	float: right;
+}
+
+/*dropdown pour les liens****/
+
+.dropdown {
+	display: inline-block;
+}
+
+.dropdown-content {
+	border: none;
+	display: none;
+	position: absolute;
+	min-width:160px;
+	box-shadow: 10px 10px 2px rgba (0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	background-color: rgba(256, 256, 256, 0.7);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #f1f1f1;
+}
+
+.dropdown:hover  .dropdown-content {
+	display:block;
+	
+}
+
+.navig .actif {
 	background-color: #AAFFAA;
 }
 
 
 
-ul.navig li.droite {
-	float: right;
-}
 
-/**dropdown pour les liens****/
-
-.dropdown-link {
-	position: relative;
-	display: inline-block;
-}
-
-.dropdown-link-content {
-	border: none;
-	display: none;
-	position: static;
-	background-color: rgba(256, 256, 256, 0.7);
-	min-width:160px;
-	box-shadow: 10px 10px 2px rgba (0, 0, 0, 0.2);
-	padding: 5px 10px;
-	overflow: visible;
-	z-index: 1;
-}
-
-.dropdown-link:hover  .dropdown-link-content {
-	display:block;
-	overflow: visible;
-	
-}
 
 
 
@@ -492,7 +509,7 @@ textarea, select {
     border-radius: 4px;
     box-sizing: border-box;
 	overflow:hidden;
-	text-overflow: ellipsis;Q<
+	text-overflow: ellipsis;
 }
 
 input[type=submit] {

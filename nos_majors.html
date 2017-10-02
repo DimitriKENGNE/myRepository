@@ -6,8 +6,10 @@
 <link rel="stylesheet" type="text/css" href="mon1erStyle.css">
 <style>
 h3 {font-variant:small-caps;}
-
 </style>
+
+<script src="myFirstJavaScript.js"></script>
+
 </head>
 <body>
 
@@ -19,29 +21,31 @@ h3 {font-variant:small-caps;}
 	</div>
 </header>
   
-  <ul class="navig">
-	<li><a href="index.html" >Accueil</a></li>
+  <div class="navig" id="bar">
+  <ul >
+	<li><a href="index.html">Accueil</a></li>
 	<li><a href="Presentation_Univ.html">Présentation_UD</a></li>
 	<li><a href="preinscription.html">Préinscription</a></li>
     <li><a href="inscription.html">Inscription</a></li>
 	<li><a href="conseil_et_orientation.html">Conseil et Orientation</a></li>
-    <li class="dropdown-link">
-		<a href="#etudiant">Etudiant</a>
-		<div class="dropdown-link-content" >
+    <li class="dropdown">
+		<a href="#etudiant" class="dropbtn">Etudiant</a>
+		<div class="dropdown-content" >
 			<a href="#monCompteEtudiant">Mon Compte </a>
 			<a href="#créerUnCompteEtudiant"> Créer un Compte</a>
 		</div>
 	</li>
 	
-    <li class="dropdown-link">
-		<a href="#enseignant">Enseignant</a>
-		<div class="dropdown-link-content" >
+    <li class="dropdown">
+		<a href="#" class="dropbtn">Enseignant</a>
+		<div class="dropdown-content" >
 			<a href="#monCompteEnseignant">Mon Compte </a>
 			<a href="#créerUnCompteEnseignant"> Créer un Compte</a>
 		</div>
 	</li>
 	<li class="droite"><a href="#about" >A propos</a></li>
   </ul>
+</div>
   
 <nav>
 
@@ -142,6 +146,12 @@ Vous pouver acceder au site de w3schools en cliquant sur cette icone: W3Schools.
   </ul>
   
  </div>
+ 
+ <div onmouseenter="displayDate()" onmouseleave="hideDate()">
+	<div class="sujet" >Date et l'heure Actuelle</div>
+	<p id="time">Faites passer le curseur ici pour faire apparaitre la date et l'heure</p>
+ </div>
+ 
  </aside>
 
 <article>
