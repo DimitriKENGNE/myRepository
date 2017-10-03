@@ -17,3 +17,16 @@ function navigbar(x) {
 
 window.onscroll = function() {navigbar(bar)};	
 	
+function afficher(x){
+	var x= document.getElementById("box");
+	x.style.display="block";
+}
+
+/*  function cacher(x){
+		var x= document.getElementById("box");
+		x.style.display="none";
+	}
+
+	document.getElementById("box").onmouseleave = cacher();     */
+	
+	

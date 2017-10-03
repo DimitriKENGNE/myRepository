@@ -274,7 +274,26 @@ article p::first-letter {
 	font-family: courier;
 }
 
-.formulaire { background-color:#EEE; padding: 0px 5px; border-radius: 20px; margin:auto; width:50%;}
+.formulaire { background-color:#EEE; 
+	padding: 0px 5px; 
+	border-radius: 20px; 
+	margin:auto;
+	width:50%;
+}
+
+.connexion { 
+	background-color:#90EE90; 
+	padding: 0px 5px; 
+	border-radius: 20px; 
+	margin:auto; 
+	width:50%;
+	display:none;
+	box-shadow: 0 0 1000px black;
+	position:fixed;
+	top: 200px;
+	left: 300px;
+	z-index: 1;
+}
 
 .administration { text-align: center}
 
@@ -289,6 +308,12 @@ table.sites_utiles th a, table.sites_utiles td a {
 	opacity:0.3;
 	text-decoration: none;
 	display: block;
+	box-shadow: 0px 7px darkcyan;
+}
+
+table.sites_utiles th a:active, table.sites_utiles td a:active {
+	box-shadow: 0px 3px darkcyan;
+	transform: translateY(4px);
 }
 
 table.sites_utiles th a:hover, table.sites_utiles td a:hover {
@@ -316,8 +341,14 @@ table.faculties th a:hover, table.faculties td a:hover {
 	opacity:1.0;
 }
 
+table.faculties th a:active, table.faculties td a:active {
+	box-shadow: 5px 5px darkcyan;
+	transform: translate(5px, 5px);
+}
+
 	
 table.majors { border-collapse: collapse;}
+
 table.majors	th { 
 		font-size: 100%;
 		text-align: center;
@@ -491,8 +522,7 @@ iframe {
 	height:200px;
 	width:100%;
 	float:left;
-	background-color:#934862;
-	opacity:0.5;
+	background-color:#FFF;
 }
 
 
@@ -500,6 +530,7 @@ iframe {
 
 input[type=text] ,input[type=date],
  input[type=number], input[type=email],
+ input[type=password],
 textarea, select {
     width: 100%;
     padding: 12px 20px;
