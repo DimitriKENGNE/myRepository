@@ -31,6 +31,8 @@ header div {
 /********************************************************************************************************************************************/
 
 .navig {
+		position: sticky;
+		top: 0;
 		width: 100%;
 }
 
@@ -288,7 +290,7 @@ article p::first-letter {
 	margin:auto; 
 	width:50%;
 	display:none;
-	box-shadow: 0 0 1000px black;
+	box-shadow: 1px 1px 800px black, 0 0 800px blue, 0 0 800px darkblue;
 	position:fixed;
 	top: 200px;
 	left: 300px;
