@@ -63,8 +63,9 @@ function displayDate() {
         break;
 	}
 	
-    document.getElementById("time").innerHTML = day  + d.getDate() + month + d.getFullYear()
-	+ "<br> <br>" + d.getHours() + "H" + " " + d.getMinutes() + "min" + " " + d.getSeconds() + "sec";
+    curentTime = document.getElementById("time");
+	curentTime.innerHTML = day  + d.getDate() + month + d.getFullYear()
+	+ "<br> <br>" + d.getHours() + "H " + d.getMinutes() + "min " + d.getSeconds() + "sec";
 	
 	/*
 	
@@ -130,4 +131,32 @@ function majusCule4() {
 function majusCule5() {
     var x = document.getElementById("fname5");
     x.value = x.value.toUpperCase();
+}
+
+function motDePasse()  {
+	var message, myPass;
+	message = document.getElementById("message1");
+	message.innerHTML = "";
+	myPass = document.getElementById("myPass").value;
+	l = myPass.length;
+	try {
+		if(l < 8) throw "Le mot de pass doit avoir au moins 8 character";
+	}
+	catch(err) {
+		message.innerHTML= err;
+	}
+}
+
+function passMatche()  {
+	var message, myPass, myPassAgain;
+	message = document.getElementById("message2");
+	message.innerHTML = "";
+	myPass = document.getElementById("myPass").value;
+	myPassAgain = document.getElementById("myPassAgain").value;
+	try {
+		if(myPass != myPassAgain) throw "Les mots de passe sont différents";
+	}
+	catch(err) {
+		message.innerHTML= err;
+	}
 }

@@ -71,9 +71,11 @@
 		Choisir un identifiant:<br>
         <input type="text" name="identifiant" required><br><br>
         Choisir un mot de passe:<br>
-        <input type="password" name="myPass" required ><br><br>
+        <input type="password" name="myPass" id="myPass" required onblur="motDePasse()">
+		<p id="message1"></p><br>
 		Saisir à nouveau le mot de passe:<br>
-        <input type="password" name="myPassAgain" required ><br><br>
+        <input type="password" name="myPassAgain" id="myPassAgain" onblur="passMatche()" required >
+		<p id="message2"></p><br>
     </fieldset>
 	<br><br>
    <input type="reset" value="Reprendre"> 
