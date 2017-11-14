@@ -47,37 +47,39 @@
 
 
 <div class="formulaire" >
-  <form action="inexistante.php">
+  <form name="monFormulaire" action="inexistante.php">
 	<fieldset>
     	<legend><b>Informations</b></legend>
         Nom:<br>
-        <input type="text" name="nom" id="fname1" onblur="majusCule1()" required autofocus ><br><br>
+        <input type="text" name="nom" id="fname1" onblur="majusCule(this); nameLength(this)" autofocus >
+		<span id="message3"></span><br>
         Prenom:<br>
-        <input type="text" name="prenom" required id="fname2" onblur="majusCule2()"><br><br>
+        <input type="text" name="prenom" required id="fname2" onblur="majusCule(this) ">
+		<span id="message4"></span><br>
         Genre:<br>
-        <input type="radio" name="gender" value="H" >
+        <input type="radio" name="gender" value="H">
         Homme 
         <input type="radio" name="gender" value="F">
         Femme
         <br><br>
 		Date de Naissance:<br>
-        <input type="date" name="bday" required ><br><br>
+        <input type="date" name="bday" required ><br>
         Lieu de naissance:<br>
-        <input type="text" name="bplace" id="fname3" onblur="majusCule3()"><br><br>
+        <input type="text" name="bplace" id="fname3" onblur="majusCule(this)"><br>
        	Ville de résidence:<br>
-        <input type="text" name="town" id="fname4" onblur="majusCule4()"><br><br>
+        <input type="text" name="town" id="fname4" onblur="majusCule(this)"><br><br>
         Email<br>
         <input type="email" name="mailbox" required ><br>
 		Matricule<br>
-		<input type="text" name="prenom" required id="fname5" onblur="majusCule5()"><br><br>
+		<input type="text" name="prenom" required id="fname5" onblur="majusCule(this)"><br><br>
 		Choisir un identifiant:<br>
         <input type="text" name="identifiant" required><br><br>
         Choisir un mot de passe:<br>
         <input type="password" name="myPass" id="myPass" required onblur="motDePasse()">
-		<p id="message1"></p><br>
+		<p id="message1"></p>
 		Saisir à nouveau le mot de passe:<br>
         <input type="password" name="myPassAgain" id="myPassAgain" onblur="passMatche()" required >
-		<p id="message2"></p><br><br><br>
+		<p id="message2"></p><br>
     </fieldset>
 	<br><br>
     <input type="reset" value="Reprendre" >  <input type="submit" value="Valider"> 

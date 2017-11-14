@@ -1,3 +1,7 @@
+
+/**************************AFFICHAGE DE LA DATE*******************************/
+/*****************************************************************************/
+
 function displayDate() {
 	var d = new Date();
 	var day = "Sunday";
@@ -65,7 +69,8 @@ function displayDate() {
 	
     curentTime = document.getElementById("time");
 	curentTime.innerHTML = day  + d.getDate() + month + d.getFullYear()
-	+ "<br> <br>" + d.getHours() + "H " + d.getMinutes() + "min " + d.getSeconds() + "sec";
+	+ "<br> <br>" + d.getHours() + "H " + d.getMinutes() + "min " +
+	d.getSeconds() + "sec";
 	
 	/*
 	
@@ -74,8 +79,10 @@ function displayDate() {
 	document.getElementById("time").style.font-size = "200%";            */
 }
 
+
 function hideDate() {
-    document.getElementById("time").innerHTML = "Faites passer le curseur ici pour faire apparaitre la date et l'heure";
+    document.getElementById("time").innerHTML =
+	"Faites passer le curseur ici pour faire apparaitre la date et l'heure";
 }
 
 
@@ -88,7 +95,11 @@ function hideDate() {
 				}
 
 				window.onscroll = function() {navigbar(bar)};	   */
-	
+
+
+/* *************AFFICHAGE DU FORMULAIRE DE CONNECTION A UN COMPTE ************/
+/* ***************************************************************************/
+				
 function afficher(x){
 	var x= document.getElementById("box");
 	x.style.display="block";
@@ -102,52 +113,50 @@ function afficher(x){
 				document.getElementById("box").onmouseleave = cacher();     */
 	
 
+/* ************* METTRE CERTAINES ENTREES EN MAJUSCULE ***********************/
+/* ***************************************************************************/
 
 
-
-function majusCule1() {
-    var x = document.getElementById("fname1");
-	console.log(x);
-    x.value = x.value.toUpperCase();
-	console.log(x.value);
-	
-}
-
-function majusCule2() {
-    var x = document.getElementById("fname2");
+function majusCule(formField) {
+    var x = document.getElementById("formField.id");
     x.value = x.value.toUpperCase();
 }
 
-function majusCule3() {
-    var x = document.getElementById("fname3");
-    x.value = x.value.toUpperCase();
-}
 
-function majusCule4() {
-    var x = document.getElementById("fname4");
-    x.value = x.value.toUpperCase();
-}
 
-function majusCule5() {
-    var x = document.getElementById("fname5");
-    x.value = x.value.toUpperCase();
-}
+/* ************* VALIDATION DU FORMULAIRE DE CREATION D'UN COMPTE ************/
+/* ***************************************************************************/
 
-function motDePasse()  {
-	var message, myPass;
-	message = document.getElementById("message1");
+
+function nameLength(formField)  { // Vérification des longueurs des noms et des prénoms
+	var message, nom, longueur;
+	message = document.getElementById("message3");
 	message.innerHTML = "";
-	myPass = document.getElementById("myPass").value;
-	l = myPass.length;
+	nom = document.getElementById("formField.id").value;
+	longueur = nom.length;
 	try {
-		if(l < 8) throw "Le mot de pass doit avoir au moins 8 character";
+		if(longueur < 2) throw "Ce champs requiert au moins 2 charactères";
 	}
 	catch(err) {
 		message.innerHTML= err;
 	}
 }
 
-function passMatche()  {
+function motDePasse()  {  //verification de la longueur des mots de passe
+	var message, myPass, longueur;
+	message = document.getElementById("message3");
+	message.innerHTML = "";
+	myPass = document.getElementById("myPass").value;
+	longueur = myPass.length;
+	try {
+		if(l < 6) throw "Le mot de pass doit avoir au moins 6 charactères";
+	}
+	catch(err) {
+		message.innerHTML= err;
+	}
+}
+
+function passMatche()  {   // On vérifie si les mots de passe sont égaux
 	var message, myPass, myPassAgain;
 	message = document.getElementById("message2");
 	message.innerHTML = "";
@@ -160,3 +169,9 @@ function passMatche()  {
 		message.innerHTML= err;
 	}
 }
+
+
+/* ************* VALIDATION DU FORMULAIRE DE CREATION D'UN COMPTE ************/
+/* ***************************************************************************/
+
+function validateForm()
