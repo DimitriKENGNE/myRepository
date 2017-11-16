@@ -197,8 +197,14 @@ function ageVerification()  {
 	message = document.getElementById("message_age");
 	champ = document.getElementById("bday")
 	dateDeNaissance = champ.value;
-	anneeDeNaissance = dateDeNaissance.getFullYear;
-	annee = today.getFullYear;
+	anneeDeNaissance = dateDeNaissance.slice(0,4);
+	anneeDeNaissance = Number(anneeDeNaissance);
+	annee = today.getFullYear();
+	
+	console.log(dateDeNaissance);
+    console.log(annee);
+    console.log(anneeDeNaissance);
+	
 	age = annee - anneeDeNaissance;
 	if ( age < 15 || age > 35 ) {
 		message.innerHTML="Veuillez vérifier votre année de naissance.";
