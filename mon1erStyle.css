@@ -498,7 +498,10 @@ p	 { color:#4B0082;  padding:10px; text-indent:50px; line-height:2,0;} /*l'attri
 
 
 span.name { color:blue;}
-
+span.erreur {
+	color: red;
+	font-size: 75%;
+}
 
 a:link {
     color: green; 
@@ -596,6 +599,7 @@ input[type=reset]:active {
 }
 input:focus {
 background-color:#EEE ;
+border-color: green; 
 }
 
 

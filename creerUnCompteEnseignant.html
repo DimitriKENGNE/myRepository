@@ -25,7 +25,7 @@
     <li><a href="inscription.html">Inscription</a></li>
 	<li><a href="conseil_et_orientation.html">Conseil et Orientation</a></li>
     <li class="dropdown" >
-		<a href="#etudiant" class="dropbtn actif">Etudiant</a>
+		<a href="#etudiant" class="dropbtn">Etudiant</a>
 		<div class="dropdown-content" >
 			<a href="#" onclick="afficher()">Mon Compte </a>
 			<a href="creerUnCompteEtudiant.html" > Créer un Compte</a>
@@ -33,7 +33,7 @@
 	</li>
 	
     <li class="dropdown">
-		<a href="#" class="dropbtn">Enseignant</a>
+		<a href="#" class="dropbtn actif">Enseignant</a>
 		<div class="dropdown-content" >
 			<a href="#" onclick="afficher()">Mon Compte </a>
 			<a href="#"> Créer un Compte</a>
@@ -47,35 +47,37 @@
 
 
 <div class="formulaire">
-  <form action="inexistante.php">
+  <form name="formulaireEnseignant" action="inexistante.php">
 	<fieldset>
     	<legend><b>Informations</b></legend>
-        Nom:<br>
-        <input type="text" name="nom" required autofocus id="fname1" onblur="majusCule(this)"><br><br>
-        Prenom:<br>
-        <input type="text" name="prenom" required id="fname2" onblur="majusCule(this)"><br><br>
+		Prenom:<br>
+        <input type="text" name="prenom" required id="fname2" onblur="majusCule(this); nameLength(this)" autofocus>
+		<span id="message_prenom" class="erreur"></span><br>
+         Nom:<br>
+        <input type="text" name="nom" id="fname1" onblur="majusCule(this); nameLength(this)">
+		<span id="message_nom" class="erreur"></span><br>
         Genre:<br>
         <input type="radio" name="gender" value="H" >
         Homme 
         <input type="radio" name="gender" value="F">
         Femme
-        <br><br>
+        <br>
 		Domaine d'enseignement:<br>
-        <input type="text" name="nom" required id="fname3" onblur="majusCule(this)"><br><br>
+        <input type="text" name="nom" required id="fname3" onblur="majusCule(this)"><br>
        	Ville de résidence:<br>
-        <input type="text" name="town" id="fname4" onblur="majusCule(this)"><br><br>
+        <input type="text" name="town" id="fname4" onblur="majusCule(this)"><br>
         Email<br>
         <input type="email" name="mailbox" required ><br>
 		Matricule<br>
-		<input type="text" name="prenom" required id="fname5" onblur="majusCule(this)"><br><br>
+		<input type="text" name="prenom" required id="fname5" onblur="majusCule(this)"><br>
 		Choisir un identifiant:<br>
-        <input type="text" name="identifiant" required><br><br>
+        <input type="text" name="identifiant" required><br>
         Choisir un mot de passe:<br>
         <input type="password" name="myPass" id="myPass" required onblur="motDePasse()">
-		<p id="message1"></p><br>
+		<span id="message_motDePasse" class="erreur"></span><br>
 		Saisir à nouveau le mot de passe:<br>
         <input type="password" name="myPassAgain" id="myPassAgain" onblur="passMatche()" required >
-		<p id="message2"></p><br>
+		<span id="message_comparaison" class="erreur"></span>
     </fieldset>
 	<br><br>
    <input type="reset" value="Reprendre"> 

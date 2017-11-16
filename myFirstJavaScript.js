@@ -1,10 +1,11 @@
 
-/**************************AFFICHAGE DE LA DATE*******************************/
-/*****************************************************************************/
+"use strict";
+
+/* *************************AFFICHAGE DE LA DATE*******************************/
+/* ****************************************************************************/
 
 function displayDate() {
-	var d = new Date();
-	var day = "Sunday";
+	var d = new Date(), day = "Sunday", month = "January", curentTime;
 	switch (d.getDay()) {
     case 0:
         day = "Sunday";
@@ -27,7 +28,7 @@ function displayDate() {
     case 6:
         day = "Saturday";
 }
-	var month = "January";
+	
 	switch (d.getMonth()) {
     case 0:
         month = "January";
@@ -118,8 +119,8 @@ function afficher(x){
 
 
 function majusCule(formField) {
-    var x = document.getElementById("formField.id");
-    x.value = x.value.toUpperCase();
+	var x = document.getElementById(formField.id);
+	x.value = x.value.toUpperCase();
 }
 
 
@@ -128,50 +129,84 @@ function majusCule(formField) {
 /* ***************************************************************************/
 
 
-function nameLength(formField)  { // Vérification des longueurs des noms et des prénoms
-	var message, nom, longueur;
-	message = document.getElementById("message3");
-	message.innerHTML = "";
-	nom = document.getElementById("formField.id").value;
+
+function nameLength(formField) { // Vérification des longueurs des noms et des prénoms
+    var nom, longueur,champ,nameError, firstNameError;
+    nameError = document.getElementById("message_nom");
+    firstNameError = document.getElementById("message_prenom");
+    champ = document.getElementById(formField.id);
+    nom = champ.value;
 	longueur = nom.length;
-	try {
-		if(longueur < 2) throw "Ce champs requiert au moins 2 charactères";
-	}
-	catch(err) {
-		message.innerHTML= err;
-	}
+
+    if (formField.id == "fname1") {
+        if (longueur < 2) {
+			champ.style.borderColor= "red";
+			nameError.innerHTML = "Ce champs requiert au moins 2 charactères.";
+		}else if (longueur > 12){
+			champ.style.borderColor= "red";
+			nameError.innerHTML = "Veuillez entrer un nom de moins de 12 charactères.";
+        }else {
+			champ.style.borderColor= "lightgray";
+			nameError.innerHTML = "";
+		}
+    }
+
+    if (formField.id == "fname2") {
+        if (longueur < 3 ) {
+			champ.style.borderColor= "red";
+			firstNameError.innerHTML = "Le prénom requiert au moins 3 charactères.";
+		}else if (longueur > 12){
+			champ.style.borderColor= "red";
+			firstNameError.innerHTML = "Veuillez entrer un prénom de moins de 12 charactères.";
+        }else {
+			champ.style.borderColor= "lightgray";
+			firstNameError.innerHTML = "";
+		}
+    }
+
 }
 
 function motDePasse()  {  //verification de la longueur des mots de passe
-	var message, myPass, longueur;
-	message = document.getElementById("message3");
-	message.innerHTML = "";
-	myPass = document.getElementById("myPass").value;
+	var message, myPass, longueur, champ;
+	message = document.getElementById("message_motDePasse");
+	champ = document.getElementById("myPass");
+	myPass = champ.value;
 	longueur = myPass.length;
-	try {
-		if(l < 6) throw "Le mot de pass doit avoir au moins 6 charactères";
-	}
-	catch(err) {
-		message.innerHTML= err;
+	if(longueur < 6) {
+		champ.style.borderColor = "red";
+		message.innerHTML = " Le mot de passe requiert au moins 6 charactères.";
+	}else {
+		champ.style.borderColor= "lightgray";
+		message.innerHTML = "";
 	}
 }
 
 function passMatche()  {   // On vérifie si les mots de passe sont égaux
-	var message, myPass, myPassAgain;
-	message = document.getElementById("message2");
-	message.innerHTML = "";
+	var message, myPass, myPassAgain, champ;
+	message = document.getElementById("message_comparaison");
 	myPass = document.getElementById("myPass").value;
-	myPassAgain = document.getElementById("myPassAgain").value;
-	try {
-		if(myPass != myPassAgain) throw "Les mots de passe sont différents";
-	}
-	catch(err) {
-		message.innerHTML= err;
+	champ = document.getElementById("myPassAgain");
+	myPassAgain = champ.value;
+	if(myPass != myPassAgain) {
+		message.innerHTML="Les mots de passe sont différents.";
+		champ.style.borderColor = "red";
 	}
 }
-
+function ageVerification()  {
+	var today = new Date(), message, champ, dateDeNaissance, anneeDeNaissance, annee, age;
+	message = document.getElementById("message_age");
+	champ = document.getElementById("bday")
+	dateDeNaissance = champ.value;
+	anneeDeNaissance = dateDeNaissance.getFullYear;
+	annee = today.getFullYear;
+	age = annee - anneeDeNaissance;
+	if ( age < 15 || age > 35 ) {
+		message.innerHTML="Veuillez vérifier votre année de naissance.";
+		champ.style.borderColor = "red";
+	}
+}
 
 /* ************* VALIDATION DU FORMULAIRE DE CREATION D'UN COMPTE ************/
 /* ***************************************************************************/
 
-function validateForm()
+//function validateForm()
