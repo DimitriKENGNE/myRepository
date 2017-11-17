@@ -202,13 +202,18 @@ function ageVerification()  {
 	annee = today.getFullYear();
 	
 	console.log(dateDeNaissance);
-    console.log(typeof annee);
+    console.log(annee);
     console.log(anneeDeNaissance);
 	
+	
 	age = annee - anneeDeNaissance;
+	console.log(age);
 	if ( age < 15 || age > 35 ) {
 		message.innerHTML="Veuillez vérifier votre année de naissance.";
 		champ.style.borderColor = "red";
+	}else {
+		message.innerHTML="";
+		champ.style.borderColor = "lightgray";
 	}
 }
 
