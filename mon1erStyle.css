@@ -8,14 +8,25 @@ div.container {
 /*******************************************************************************************************************************************/
 
 header {padding: 5px; 
-		clear: left;
-        background-image: url("arrierePlan.jpg");
-        color:blue; 
-        font-family:verdana; 
-        font-size:200%; 
-        text-align:center;
-		border-bottom: 7px solid #AAFFAA;
-		width: 100%;
+	clear: left;
+    color:blue; 
+    font-family:verdana; 
+    font-size:200%; 
+    text-align:center;
+	border-bottom: 7px solid #AAFFAA;
+	width: 100%;
+	background-image: url("arrierePlan.jpg");
+	animation-name: entete;
+	animation-duration: 100s;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	-webkit-animation-name: entete;
+	-webkit-animation-duration: 100s;
+	-webkit-animation-delay: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	
 }
 
 header div {
@@ -25,6 +36,21 @@ header div {
 	margin: auto;
 }
 
+@keyframes entete {
+	0% {background-image: url("salon.jpg");}
+	25% {background-image: url("arrierePlan.jpg");}
+	50% {background-image: url("codage.jpg");}
+	75% {background-image: url("codeur.jpg");}
+	100% {background-image: url("ordinateur.jpg");}
+}
+
+@-webkit-keyframes entete {
+	0% {background-image: url("salon.jpg");}
+	25% {background-image: url("arrierePlan.jpg");}
+	50% {background-image: url("codage.jpg");}
+	75% {background-image: url("codeur.jpg");}
+	100% {background-image: url("ordinateur.jpg");}
+}
 
 
 /**       B A R R E   D E   N A V I G A T I O N   *******************************************************************************************/

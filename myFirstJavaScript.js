@@ -202,7 +202,7 @@ function ageVerification()  {
 	annee = today.getFullYear();
 	
 	console.log(dateDeNaissance);
-    console.log(annee);
+    console.log(typeof annee);
     console.log(anneeDeNaissance);
 	
 	age = annee - anneeDeNaissance;
