@@ -7,8 +7,9 @@
 <style>
 h3 {font-variant:small-caps;}
 </style>
+	<script src="myFirstJavaScript.js"></script>
+	<script src="https://www.w3schools.com/lib/w3.js"></script>
 
-<script src="myFirstJavaScript.js"></script>
 
 </head>
 <body>
@@ -20,32 +21,11 @@ h3 {font-variant:small-caps;}
 		<h1>Université DIMitri I<sup>er</sup></h1>
 	</div>
 </header>
-  
- <div class="navig" id="bar">
-  <ul >
-	<li><a href="index.html">Accueil</a></li>
-	<li><a href="Presentation_Univ.html">Présentation_UD</a></li>
-	<li><a href="preinscription.html">Préinscription</a></li>
-    <li><a href="inscription.html">Inscription</a></li>
-	<li><a href="conseil_et_orientation.html" class="actif">Conseil et Orientation</a></li>
-    <li class="dropdown">
-		<a href="#etudiant" class="dropbtn">Etudiant</a>
-		<div class="dropdown-content" >
-			<a href="#" onclick="afficher()">Mon Compte </a>
-			<a href="creerUnCompteEtudiant.html"> Créer un Compte</a>
-		</div>
-	</li>
-	
-    <li class="dropdown">
-		<a href="#" class="dropbtn">Enseignant</a>
-		<div class="dropdown-content" >
-			<a href="#" onclick="afficher()">Mon Compte </a>
-			<a href="creerUnCompteEnseignant.html"> Créer un Compte</a>
-		</div>
-	</li>
-	<li class="droite"><a href="#about" >A propos</a></li>
-  </ul>
-</div>
+
+<div w3-include-html ="navbar.html"></div>
+<script>
+	w3.includeHTML();
+</script>
   
 <nav>
 

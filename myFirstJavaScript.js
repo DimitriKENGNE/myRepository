@@ -98,9 +98,41 @@ function hideDate() {
 				window.onscroll = function() {navigbar(bar)};	   */
 
 
+
+/* *************ANIMATION DE L'ENTETE ****************************************/
+/* ***************************************************************************/
+
+function changerImage() {
+	setTimeout(firstImage, 2000)
+	setTimeout(secondImage, 4000)
+	setTimeout(thirdImage, 6000)
+	setTimeout(fourthImage, 8000)
+	setTimeout(fifthImage, 10000)
+}
+function firstImage() {
+	var y = document.getElementById("entete");
+	y.style.backgroundImage = "salon.jpg";
+}
+function secondImage() {
+	var y = document.getElementById("entete");
+	y.style.backgroundImage = "arrierePlan.jpg";
+}
+function thirdImage() {
+	var y = document.getElementById("entete");
+	y.style.backgroundImage = "codage.jpg";
+}
+function fourthImage() {
+	var y = document.getElementById("entete");
+	y.style.backgroundImage = "codeur.jpg";
+}
+function fifthImage() {
+	var y = document.getElementById("entete");
+	y.style.backgroundImage = "ordinateur.jpg";
+}
+
 /* *************AFFICHAGE DU FORMULAIRE DE CONNECTION A UN COMPTE ************/
 /* ***************************************************************************/
-				
+
 function afficher(x){
 	var x= document.getElementById("box");
 	x.style.display="block";
