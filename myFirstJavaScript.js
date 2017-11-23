@@ -102,9 +102,27 @@ function hideDate() {
 /* *************ANIMATION DE L'ENTETE ****************************************/
 /* ***************************************************************************/
 
-function repeter () {
-	var myVar = setInterval(changerImage,12000);
+function modifierImage () {
+	var imgs = ["url(salon.jpg)", "url(arrierePlan.jpg)", "url(codage.jpg)", "url(codeur.jpg)", "url(ordinateur.jpg)" ];
+	var i = 0;
+	var myVar = setInterval(function(){
+		afficherImage(imgs[i]);
+		i++;
+		if (i == 5) {
+			i = 0;
+		}
+		console.log(imgs[i]);
+	},10000);
+
 }
+
+function afficherImage(x) {
+	var y = document.getElementById("entete");
+	y.style.backgroundImage = x;
+}
+
+
+/*
 
 function changerImage() {
 	setTimeout(firstImage, 2000)
@@ -113,9 +131,7 @@ function changerImage() {
 	setTimeout(fourthImage, 8000)
 	setTimeout(fifthImage, 10000)
 }
-function firstImage() {
-	var y = document.getElementById("entete");
-	y.style.backgroundImage = "url(salon.jpg)";
+
 }
 function secondImage() {
 	var y = document.getElementById("entete");
@@ -133,6 +149,8 @@ function fifthImage() {
 	var y = document.getElementById("entete");
 	y.style.backgroundImage = "url(ordinateur.jpg)";
 }
+
+*/
 
 /* *************AFFICHAGE DU FORMULAIRE DE CONNECTION A UN COMPTE ************/
 /* ***************************************************************************/
