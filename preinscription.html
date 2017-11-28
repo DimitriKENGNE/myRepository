@@ -9,152 +9,152 @@
 <script src="myFirstJavaScript.js"></script>
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <body onload = "modifierImage()">
+<div id="preinscription" class="contenu">
+    <header id="entete">
+        <div>
+            <h1>Université DIMitri I<sup>er</sup></h1>
+        </div>
+    </header>
+
+    <div w3-include-html ="navbar.html" class="navig"></div>
+    <script>
+        w3.includeHTML();
+    </script>
 
 
-<header id="entete">
-   <div>
-		<h1>Université DIMitri I<sup>er</sup></h1>
-	</div>
-</header>
-
-<div w3-include-html ="navbar.html"></div>
-<script>
-    w3.includeHTML();
-</script>
-  
 
 
+    <div class="formulaire">
+        <p> Vous êtes titulaire d'un baccalaureat, vous désirez poursuivre vos études à l'université de Douala, compléter votre <span class="color:red;"><b>péinscription</b></span> ici.</p><br><br>
+        <form action="inexistante.php">
+            <fieldset>
+                <legend><b>Informations</b></legend>
+                Genre:<br>
+                <input type="radio" name="gender" value="H">
+                Homme
+                <input type="radio" name="gender" value="F">
+                Femme
+                <br><br>
+                Nom:<br>
+                <input type="text" name="nom" required  id="fname1" onblur="majusCule1()"><br><br>
+                Prenom:<br>
+                <input type="text" name="prenom" required id="fname2" onblur="majusCule2()"><br><br>
+                Date de Naissance:<br>
+                <input type="date" name="bday" required ><br><br>
+                Lieu de naissance:<br>
+                <input type="text" name="bplace" id="fname3" onblur="majusCule3()"><br><br>
+                Ville de résidence:<br>
+                <input type="text" name="town" id="fname4" onblur="majusCule4()"><br><br>
+                Nationnalité<br>
+                <select name="nation">
+                    <option value="cameroun">Cameroun</option>
+                    <option value="gabon">Gabon</option>
+                    <option value="congo">Congo</option>
+                    <option value="centrafrique">République Centrafricaine</option>
+                    <option value="tchad">Tchad</option>
+                    <option value="guinee">Guinée Equatoriale</option>
+                    <option value="autre">Autre</option>
+                </select><br><br>
+                Situation Matrimoniale<br>
+                <select name="status">
+                    <option value="celibataire">Célibataire</option>
+                    <option value="marie">Marié(e)</option>
+                    <option value="divorce">Divorcé(e)</option>
+                    <option value="veuf">veuf / veuve</option>
+                </select><br><br>
+                Région d'Origine<br>
+                <select name="region">
+                    <option value="littoral">Littoral</option>
+                    <option value="ouest">Ouest</option>
+                    <option value="centre">Centre</option>
+                    <option value="sud">Sud</option>
+                    <option value="est">Est</option>
+                    <option value="nordOuest">Nord-Ouest</option>
+                    <option value="sudOuest">Sud-Ouest</option>
+                    <option value="adamaoua">Adamaoua</option>
+                    <option value="extremeNord">Extreme-Nord</option>
+                    <option value="nord">Nord</option>
+                </select><br><br>
+                Département<br>
+                <select name="departement">
+                    <option value="nkam">Nkam</option>
+                    <option value="wouri" selected>Wouri</option>
+                    <option value="moungo">Moungo</option>
+                    <option value="sanagaMaritme">Sanaga Maritme</option>
+                </select><br><br>
+            </fieldset>
 
-  <div class="formulaire">
-  <p> Vous êtes titulaire d'un baccalaureat, vous désirez poursuivre vos études à l'université de Douala, compléter votre <span class="color:red;"><b>péinscription</b></span> ici.</p><br><br>
-<form action="inexistante.php">
-	<fieldset>
-    	<legend><b>Informations</b></legend>
-        Genre:<br>
-        <input type="radio" name="gender" value="H">
-        Homme 
-        <input type="radio" name="gender" value="F">
-        Femme
-        <br><br>
-        Nom:<br>
-        <input type="text" name="nom" required  id="fname1" onblur="majusCule1()"><br><br>
-        Prenom:<br>
-        <input type="text" name="prenom" required id="fname2" onblur="majusCule2()"><br><br>
-        Date de Naissance:<br>
-        <input type="date" name="bday" required ><br><br>
-        Lieu de naissance:<br>
-        <input type="text" name="bplace" id="fname3" onblur="majusCule3()"><br><br>
-       	Ville de résidence:<br>
-        <input type="text" name="town" id="fname4" onblur="majusCule4()"><br><br>
-        Nationnalité<br>
-      	<select name="nation">
-        	<option value="cameroun">Cameroun</option>
-            <option value="gabon">Gabon</option>
-            <option value="congo">Congo</option>
-            <option value="centrafrique">République Centrafricaine</option>
-            <option value="tchad">Tchad</option>
-            <option value="guinee">Guinée Equatoriale</option>
-            <option value="autre">Autre</option>
-		</select><br><br>
-        Situation Matrimoniale<br>
-      	<select name="status">
-        	<option value="celibataire">Célibataire</option>
-            <option value="marie">Marié(e)</option>
-            <option value="divorce">Divorcé(e)</option>
-            <option value="veuf">veuf / veuve</option>
-		</select><br><br>
-        Région d'Origine<br>
-        <select name="region">
-        	<option value="littoral">Littoral</option>
-            <option value="ouest">Ouest</option>
-            <option value="centre">Centre</option>
-            <option value="sud">Sud</option>
-            <option value="est">Est</option>
-            <option value="nordOuest">Nord-Ouest</option>
-            <option value="sudOuest">Sud-Ouest</option>
-            <option value="adamaoua">Adamaoua</option>
-            <option value="extremeNord">Extreme-Nord</option>
-            <option value="nord">Nord</option>
-		</select><br><br>
-        Département<br>
-        <select name="departement">
-            <option value="nkam">Nkam</option>
-            <option value="wouri" selected>Wouri</option>
-            <option value="moungo">Moungo</option>
-            <option value="sanagaMaritme">Sanaga Maritme</option>
-        </select><br><br>
-    </fieldset>
-        
-    <fieldset>
-    	<legend><b>Communication et Contact</b></legend>
-        Langues parlées<br>
-        <input type="checkbox" name="lang1" value="anglais">Anglais<br>
-        <input type="checkbox" name="lang2" value="français" checked>Français<br>
-        <input type="checkbox" name="lang3" value="Arabe">Arabe<br>
-        <input type="checkbox" name="lang4" value="chinois">Chinois<br><br>
-        Votre langue principale:
-        <select name="langP">
-        	<option value="anglais">Anglais</option>
-            <option value="français">Français</option>
-            <option value="Arabe">Arabe</option>
-            <option value="chinois">Chinois</option>
-        </select><br><br>
-        Numéro de téléphone<br>
-        <input type="number" name="tel" required><br><br>
-        Boîte postale<br>
-        <input type="text" name="bp" required ><br><br>
-        Email<br>
-        <input type="email" name="mailbox" required ><br>
-    </fieldset>
-    
-     <fieldset>
-    	<legend><b>Présenter vous en quelques mots.</b></legend><br>
+            <fieldset>
+                <legend><b>Communication et Contact</b></legend>
+                Langues parlées<br>
+                <input type="checkbox" name="lang1" value="anglais">Anglais<br>
+                <input type="checkbox" name="lang2" value="français" checked>Français<br>
+                <input type="checkbox" name="lang3" value="Arabe">Arabe<br>
+                <input type="checkbox" name="lang4" value="chinois">Chinois<br><br>
+                Votre langue principale:
+                <select name="langP">
+                    <option value="anglais">Anglais</option>
+                    <option value="français">Français</option>
+                    <option value="Arabe">Arabe</option>
+                    <option value="chinois">Chinois</option>
+                </select><br><br>
+                Numéro de téléphone<br>
+                <input type="number" name="tel" required><br><br>
+                Boîte postale<br>
+                <input type="text" name="bp" required ><br><br>
+                Email<br>
+                <input type="email" name="mailbox" required ><br>
+            </fieldset>
+
+            <fieldset>
+                <legend><b>Présenter vous en quelques mots.</b></legend><br>
         <textarea name="presentation" rows="10" cols="80" >
 		Votre présentation
 		</textarea>
-    </fieldset>
-        
-
-
-        <br><br>
-        <input type="reset" value="Reprendre">  <input type="submit" value="Valider"> 
-      
-</form>
+            </fieldset>
 
 
 
+            <br><br>
+            <input type="reset" value="Reprendre">  <input type="submit" value="Valider">
+
+        </form>
+
+
+
+    </div>
+
+    <hr>
+
+    <hr>
+
+    <footer>
+        <address>
+            Written by Dimitri KENGNE.<br>
+            Follow us on:<a href="https://www.facebook.com/micheldimitri.kengne" target="_blank">facebook</a>
+            <br>
+            Douala, Cameroun<br>
+            Email:m.dimitri.kengne@gmail.com
+        </address>
+    </footer>
+
+    <!-- Formulaire de connexion aux compte Etudiant et Enseignant -->
+    <div class="connexion" id="box">
+        <form action="#">
+            <fieldset>
+                <legend><b>Informations</b></legend>
+                Identifiant:<br>
+                <input type="text" name="identifiant" required autofocus><br><br>
+                Mot de passe:<br>
+                <input type="password" name="pass" required ><br><br>
+                Se souvenir de moi
+                <input type="radio" name="registre" value="H" ><br><br>
+            </fieldset>
+            <br><br>
+            <input type="submit" value="Valider">
+        </form>
+    </div>
 </div>
-
-<hr>
-
-<hr>
-
-<footer>
-<address>
-Written by Dimitri KENGNE.<br> 
-Follow us on:<a href="https://www.facebook.com/micheldimitri.kengne" target="_blank">facebook</a>
-<br>
-Douala, Cameroun<br>
-Email:m.dimitri.kengne@gmail.com
-</address>
-</footer>
-
-<!-- Formulaire de connexion aux compte Etudiant et Enseignant -->
-		<div class="connexion" id="box">
-			<form action="#">
-				<fieldset>
-				<legend><b>Informations</b></legend>
-					Identifiant:<br>
-					<input type="text" name="identifiant" required autofocus><br><br>
-					Mot de passe:<br>
-					<input type="password" name="pass" required ><br><br>
-					Se souvenir de moi
-					<input type="radio" name="registre" value="H" ><br><br>
-				</fieldset>
-				<br><br>
-				<input type="submit" value="Valider"> 
-			</form>
-		</div>
 
 
 </body>

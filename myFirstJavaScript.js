@@ -152,11 +152,25 @@ function fifthImage() {
 
 */
 
+
+
+
+function surbrillance() {
+	var page = document.getElementsByTagName("DIV")[0];;
+	var accueil = document.getElementById("accueil");
+	if (page.id === "index") {
+		accueil.style.backgroundColor = "green";
+	}
+	console.log(page.id);
+	console.log(accueil);
+}
+
+
 /* *************AFFICHAGE DU FORMULAIRE DE CONNECTION A UN COMPTE ************/
 /* ***************************************************************************/
 
 function afficher(x){
-	var x= document.getElementById("box");
+	x= document.getElementById("box");
 	x.style.display="block";
 }
 
@@ -249,7 +263,7 @@ function passMatche()  {   // On vérifie si les mots de passe sont égaux
 function ageVerification()  {
 	var today = new Date(), message, champ, dateDeNaissance, anneeDeNaissance, annee, age;
 	message = document.getElementById("message_age");
-	champ = document.getElementById("bday")
+	champ = document.getElementById("bday");
 	dateDeNaissance = champ.value;
 	anneeDeNaissance = dateDeNaissance.slice(0,4);
 	anneeDeNaissance = Number(anneeDeNaissance);
