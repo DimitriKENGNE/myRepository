@@ -4,10 +4,9 @@
 <title> Créer_un_Compte</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="mon1erStyle.css">
+	<script src="myFirstJavaScript.js"></script>
+	<script src="w3.js"></script>
 </head>
-
-<script src="myFirstJavaScript.js"></script>
-<script src="https://www.w3schools.com/lib/w3.js"></script>
 
 <body onload = "modifierImage()">
 
@@ -82,22 +81,10 @@ Email:m.dimitri.kengne@gmail.com
 </footer>
 
 <!-- Formulaire de connexion aux compte Etudiant et Enseignant -->
-		<div class="connexion" id="box">
-			<form action="#">
-				<fieldset>
-				<legend><b>Informations</b></legend>
-					Identifiant:<br>
-					<input type="text" name="identifiant" required autofocus><br><br>
-					Mot de passe:<br>
-					<input type="password" name="pass" required ><br><br>
-					Se souvenir de moi
-					<input type="radio" name="registre" value="H" ><br><br>
-				</fieldset>
-				<br><br>
-				<input type="submit" value="Valider"> 
-			</form>
-		</div>
-
+	<div w3-include-html = "login.html"></div>
+	<script>
+		w3.includeHTML();
+	</script>
 </div>
 
 </body>

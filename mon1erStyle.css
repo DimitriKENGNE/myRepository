@@ -315,20 +315,139 @@ article p::first-letter {
 	margin:auto;
 	width:50%;
 }
-
-.connexion { 
-	background-color:#90EE90; 
-	padding: 0 5px;
-	border-radius: 20px; 
-	margin:auto; 
+/**  PAGE DE LOGIN   *************************************************************************************************************************/
+/*********************************************************************************************************************************************/
+.login {
 	width:50%;
 	display:none;
-	box-shadow: 1px 1px 800px black, 0 0 800px blue, 0 0 800px darkblue;
 	position:fixed;
-	top: 200px;
-	left: 300px;
+	top: 40px;
+	left: 50%;
+	margin: 0;
 	z-index: 1;
 }
+.connexion {
+	background-color:#FFF;
+	padding: 20px 100px;
+
+}
+
+.connexion input[type=text] ,
+.connexion input[type=password]{
+	width: 80%;
+	text-align: center;
+	padding: 12px 15px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+}
+
+.connexion input[type=submit] {
+	width: 80%;
+	background-color: #00CC66;
+	color: white;
+	padding: 12px 15px;
+	margin: 2px 0;
+	display: inline-block;
+	border-radius: 4px;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	font-family: calibri;
+	font-weight: bold;
+	font-size: large;
+}
+
+.connexion input:focus {
+	background-color:#EEE ;
+	border-color: green;
+}
+
+.connexion img {
+	width: 100px;
+	height: 110px;
+	text-align: center;
+}
+
+.connexion .droite {
+	text-align: right!important;
+	color: #00CC66;
+	display: inline;
+}
+
+.connexion .gauche {
+	text-align: left!important;
+}
+.connexion .centre {
+	text-align: center;
+}
+.connexion span {
+	display: inline-block;
+	font-family: calibri;
+	font-weight: bold;
+	font-size: large;
+	padding: 12px 0;
+}
+.connexion .myAcount {
+	color: #555555;
+}
+.connexion .titre {
+	font-size: 200%;
+	display: block;
+	font-family: Tahoma;
+	font-weight: bold;
+}
+.connexion hr {
+	width: 35%;
+	text-align: left;
+	display: inline-block;
+}
+.connexion .facebook {
+	background-color: #0000FF;
+	color: #FFFFFF;
+	padding: 12px 15px;
+	margin: 2px 0;
+	display: inline-block;
+	border-radius: 4px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	font-family: calibri;
+	font-weight: bold;
+	font-size: large;
+	width: 75%;
+}
+.connexion .facebook img {
+	width: 30px;
+	height: 33px;
+	float: left;
+}
+.signUp {
+	padding: 10px;
+	background-color: #DDDDDD;
+}
+.signUp span {
+	display: block;
+	font-family: calibri;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+}
+.signUp a {
+	display: block;
+	font-family: calibri;
+	text-align: center;
+	text-decoration: underline!important;
+	color: #0064ea!important;
+}
+
 
 .administration { text-align: center}
 
@@ -517,21 +636,35 @@ body {
 
 }
 h1   {text-shadow: 3px 2px red;}
-h2   {color:green; font-family:courier; font-size:200%;}
-article h3	 {color:blue; font-family:calibri; text-align:center; background-color:#BBBBBB;}
+h2   {
+	color:green;
+	font-family:courier;
+	font-size:200%;}
+article h3	 {color:blue;
+	font-family:calibri;
+	text-align:center;
+	background-color:#BBBBBB;}
 img {
 	border-radius: 10px;
 	object-fit: contain;
 }
-h4    {color:blue; font-family:courier; font-size:150%;}
-p	 { color:#4B0082;  padding:10px; text-indent:50px; line-height:2.0;} /*l'attribut line-height ne fonctionne pas. */
+h4    {color:blue;
+	font-family:courier;
+	font-size:150%;}
+p	 {
+	color:#4B0082;
+	padding:10px;
+	text-indent:50px;
+	line-height:2.0;} /*l'attribut line-height ne fonctionne pas. */
 ::selection{
 	color:red;
 	background-color:cyan;
 }
 
 
-#p01 {color:#4B0089;  font-family:verdana; }
+#p01 {
+	color:#4B0089;
+	font-family:verdana; }
 
 
 
@@ -545,22 +678,25 @@ span.erreur {
 a:link {
     color: green; 
     background-color: transparent; 
-    text-decoration: none;}
+    text-decoration: none;
+	cursor: pointer;
+}
 
 a:visited {
-color: green;
+	color: green;
     background-color: transparent;
-    text-decoration: underline;}
+}
 
 a:hover {
     color: red;
     background-color: transparent;
-    text-decoration: underline;}
+	cursor: pointer;
+}
 
 a:active {
     color: blue;
     background-color: transparent;
-    text-decoration: none;}
+}
 	
 iframe {
 	height:200px;
@@ -597,8 +733,6 @@ input[type=submit] {
     border-radius: 10px;
 	outline:none;   
     cursor: pointer;
-	-webkit-transition: width 1s;
-	transition: width 1s;
 	box-shadow: 0 9px #999;
 }
 
@@ -611,20 +745,12 @@ input[type=reset] {
     border: none;
     border-radius: 10px;
 	outline:none;
-    cursor: pointer;
-	-webkit-transition: width 1s;
-	transition: width 1s;
+	cursor: pointer;
 	box-shadow: 0 9px #999;
 }
 
-input[type=submit]:hover {
-    background-color: #00FF00;
-	width: 200px;
-}
-
-input[type=reset]:hover {
-    background-color: red;
-	width: 200px;
+input [type=checkbox]:hover {
+	cursor: pointer;
 }
 
 input[type=submit]:active {
@@ -637,7 +763,6 @@ input[type=reset]:active {
 	transform: translateY(4px);
 }
 input:focus {
-background-color:#EEE ;
 border-color: green; 
 }
 
