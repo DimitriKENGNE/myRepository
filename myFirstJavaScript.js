@@ -152,14 +152,36 @@ function fifthImage() {
 
 */
 
-
-
-
-function surbrillance() {
-	var page = document.getElementsByTagName("DIV")[0];;
+function surbriance() {
+	var page = document.getElementsByTagName("DIV")[0];
 	var accueil = document.getElementById("accueil");
+	var present = document.getElementById("presentationUniv");
+	var	preinscript = document.getElementById("preinscriptionEtudiant");
+	var	advice = document.getElementById("conseilsOrientation");
+	var	inscript = document.getElementById("inscriptionEtudiant");
+	var	student = document.getElementById("compteEtudiant");
+	var	lecturer = document.getElementById("compteEnseignant");
+
 	if (page.id === "index") {
 		accueil.style.backgroundColor = "green";
+	}
+	else if (page.id === "presentation") {
+		present.style.backgroundColor = "green";
+	}
+	else if (page.id === "preinscription") {
+		preinscript.style.backgroundColor = "green";
+	}
+	else if (page.id === "conseils") {
+		advice.style.backgroundColor = "green";
+	}
+	else if (page.id === "inscription") {
+		inscript.style.backgroundColor = "green";
+	}
+	else if (page.id === "etudiant") {
+		student.style.backgroundColor = "green";
+	}
+	else if (page.id === "enseignant") {
+			lecturer.style.backgroundColor = "green";
 	}
 	console.log(page.id);
 	console.log(accueil);
