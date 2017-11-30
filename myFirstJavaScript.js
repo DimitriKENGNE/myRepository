@@ -191,18 +191,15 @@ function surbriance() {
 /* *************AFFICHAGE DU FORMULAIRE DE CONNECTION A UN COMPTE ************/
 /* ***************************************************************************/
 
-function afficher(x){
-	x= document.getElementById("box");
+function afficher(){
+	var x= document.getElementById("box");
 	x.style.display="block";
 }
+function cacher(){
+	var x= document.getElementById("box");
+	x.style.display="none";
+}
 
-/*  			function cacher(x){
-					var x= document.getElementById("box");
-					x.style.display="none";
-				}
-
-				document.getElementById("box").onmouseleave = cacher();     */
-	
 
 /* ************* METTRE CERTAINES ENTREES EN MAJUSCULE ***********************/
 /* ***************************************************************************/
