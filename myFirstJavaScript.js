@@ -309,6 +309,36 @@ function ageVerification()  {
 /* ******************************* LES EVENEMENTS ****************************/
 /* ***************************************************************************/
 
+//Cette fonction utilise window.onload et addEventListener('DOMContentLoaded' ... pour s'assurer que la page est prete, avant de commencer a executer les fonctions
+function documentReady(func){
+	var last = window.onload;
+	var isReady = false;
+	//for cross browser support
+	document.addEventListener('DOMContentLoaded', function(){
+		console.log("All DOM resources finished loading");
+		isReady = true;
+		func();
+	})
+
+	window.onload = function(){
+		//if another script was calling onload, let's run it
+		if(last) last();
+		//then run our function;
+		if(isReady) func();
+	}
+}
+
+
+documentReady(function(){
+	modifierImage();
+	w3.includeHTML();
+
+	setTimeout(function(){
+		surbriance();
+	}, 100);
+
+});
 //document.getElementsByTagName("BODY").addEventListener("load", function(){modifierImage(); surbriance();});
 document.getElementById("box").addEventListener("mouseleave", function(){cacher()});
-document.getElementById("compte").addEventListener("click", function(){afficher()});
+//document.getElementById("compte").addEventListener("click", function(){afficher()});
+document.getElementById("compte").onclick = function(){afficher()};
