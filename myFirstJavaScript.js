@@ -228,9 +228,11 @@ function nameLength(formField) { // Vérification des longueurs des noms et des 
     if (formField.id == "fname1") {
         if (longueur < 2) {
 			champ.style.borderColor= "red";
+			champ.style.backgroundColor= "#CC0000";
 			nameError.innerHTML = "Ce champs requiert au moins 2 charactères.";
 		}else if (longueur > 12){
 			champ.style.borderColor= "red";
+			champ.style.backgroundColor= "#CC0000";
 			nameError.innerHTML = "Veuillez entrer un nom de moins de 12 charactères.";
         }else {
 			champ.style.borderColor= "lightgray";
@@ -304,7 +306,9 @@ function ageVerification()  {
 	}
 }
 
-/* ************* VALIDATION DU FORMULAIRE DE CREATION D'UN COMPTE ************/
+/* ******************************* LES EVENEMENTS ****************************/
 /* ***************************************************************************/
 
-//function validateForm()
+//document.getElementsByTagName("BODY").addEventListener("load", function(){modifierImage(); surbriance();});
+document.getElementById("box").addEventListener("mouseleave", function(){cacher()});
+document.getElementById("compte").addEventListener("click", function(){afficher()});

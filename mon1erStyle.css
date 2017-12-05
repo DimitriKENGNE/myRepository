@@ -309,11 +309,40 @@ article p::first-letter {
 	font-family: courier;
 }
 
-.formulaire { background-color:#EEE; 
-	padding: 0 5px;
-	border-radius: 20px; 
-	margin:auto;
-	width:50%;
+.formulaire {
+	background-color: #DDDDDD!important;
+	width: 100%!important;
+}
+
+.court {
+	display: inline-block;
+	width: 40%;
+}
+
+.tiers {
+	display: inline-block;
+	width: 30%;
+}
+
+/*
+.court input[type=text],
+.court input[type=password],
+.court input[type=date],
+.court input[type=number],
+.court input[type=email],
+.court textarea,
+.court select {
+	width: 100%!important;
+}
+*/
+
+.student {
+	width: 60%;
+	margin: auto;
+}
+
+.student {
+
 }
 /**  PAGE DE LOGIN   *************************************************************************************************************************/
 /*********************************************************************************************************************************************/
@@ -321,19 +350,23 @@ article p::first-letter {
 	width: 50%;
 	display: none;
 	position: fixed;
-	top: 40px;
+	top: 30px;
 	left: 25%;
 	z-index: 1;
 }
 .connexion {
 	background-color:#FFF;
 	padding: 20px 100px;
+	margin: 20px;
 
 }
 
-.connexion input[type=text] ,
-.connexion input[type=password]{
-	width: 80%;
+input[type=text],
+input[type=password],
+input[type=date],
+input[type=number],
+input[type=email], textarea, select{
+	width: 95%;
 	text-align: center;
 	padding: 12px 15px;
 	display: inline-block;
@@ -345,9 +378,30 @@ article p::first-letter {
 	text-align: center;
 }
 
-.connexion input[type=submit] {
-	width: 80%;
+
+
+
+input[type=submit], input[type=reset] {
+	width: 95%;
 	background-color: #00CC66;
+	color: white;
+	padding: 12px 15px;
+	margin: 2px 0;
+	display: inline-block;
+	border-radius: 4px;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	font-family: calibri;
+	font-weight: bold;
+	font-size: large;
+}
+
+input[type=reset] {
+	width: 95%;
+	background-color: #FF0000;
 	color: white;
 	padding: 12px 15px;
 	margin: 2px 0;
@@ -403,7 +457,7 @@ article p::first-letter {
 	font-weight: bold;
 }
 .connexion hr {
-	width: 35%;
+	width: 45%;
 	text-align: left;
 	display: inline-block;
 }
@@ -421,7 +475,7 @@ article p::first-letter {
 	font-family: calibri;
 	font-weight: bold;
 	font-size: large;
-	width: 75%;
+	width: 90%;
 }
 .connexion .facebook img {
 	width: 30px;
@@ -430,7 +484,7 @@ article p::first-letter {
 }
 .signUp {
 	padding: 10px;
-	background-color: #DDDDDD;
+	background-color: #EEEEEE;
 }
 .signUp span {
 	display: block;
@@ -446,6 +500,20 @@ article p::first-letter {
 	text-decoration: underline!important;
 	color: #0064ea!important;
 }
+
+
+
+
+
+input [type=checkbox]:hover {
+	cursor: pointer;
+}
+
+input:focus {
+	border-color: green;
+}
+
+
 
 
 .administration { text-align: center}
@@ -707,63 +775,7 @@ iframe {
 
 
 
-input[type=text] ,input[type=date],
- input[type=number], input[type=email],
- input[type=password],
-textarea, select {
-    width: 40%;
-    padding: 4px 5px;
-    margin: 2px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-	overflow:hidden;
-	text-overflow: ellipsis;
-}
 
-input[type=submit] {
-    width: 70px;
-    background-color: #AAFFAA;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 10px;
-	outline:none;   
-    cursor: pointer;
-	box-shadow: 0 9px #999;
-}
-
-input[type=reset] {
-    width: 100px;
-    background-color: #FFAAAA;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 10px;
-	outline:none;
-	cursor: pointer;
-	box-shadow: 0 9px #999;
-}
-
-input [type=checkbox]:hover {
-	cursor: pointer;
-}
-
-input[type=submit]:active {
-	box-shadow: 0 5px #666;
-	transform: translateY(4px)
-}
-
-input[type=reset]:active {
-	box-shadow: 0 5px #666;
-	transform: translateY(4px);
-}
-input:focus {
-border-color: green; 
-}
 
 
 img.transition_img {
