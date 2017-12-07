@@ -4,7 +4,7 @@
 /* *************************AFFICHAGE DE LA DATE*******************************/
 /* ****************************************************************************/
 
-function displayDate() {
+function displayDate(){
 	var d = new Date(), day = "Sunday", month = "January", curentTime;
 	switch (d.getDay()) {
     case 0:
@@ -335,10 +335,64 @@ documentReady(function(){
 
 	setTimeout(function(){
 		surbriance();
-	}, 100);
-
+		//document.getElementById("compte1").onclick = function(){afficher()};
+		//document.getElementById("compte2").onclick = function(){afficher()};
+		//document.getElementById("box").addEventListener("onmouseleave", function(){cacher()});
+		showAndHide('account', 'box');
+	},100);
 });
+
+//cette fonction cache ou affiche une autre zone quand on clique sur un lien.
+//la classe du lien a cliquer est le premier parametre de la fonction, et l'id de la zonne a affichee est le deuxieme parametre
+function showAndHide(linkClass, areaId) {
+	//le lien qu'on va cliquer pour afficher la zonne cachee (Le formulaire de login)
+	//tous les liens on la meme classe
+	var links  = document.getElementsByClassName(linkClass);
+	for(var i=0; i<links.length; i++) {
+		links[i].addEventListener('click', function(e){
+			//chaque foi qu'un lien est clique, on pass l'element en question a une autre fonction pour afficher ou cacher la zone cachee
+			showOrHide(this, areaId);
+		});
+
+	}
+
+}
+
+
+//cette fonction recoit en paramettre un element sur lequel on a clique, et affiche une zone, .
+//Si on clique hors de la zone affichee, elle disparait, mais la zone reste visible tant qu'on clique dessus.
+function showOrHide(elmt, areaId){
+
+	//on selectionne la zone qu'on souhaite affichee, et on affiche
+	var area= document.getElementById(areaId);
+	area.style.display="block";
+
+	//toute la page ecoute le click.
+	document.addEventListener('click', function(e){
+		//la zonne sible est cliquee, si son id est dans l'espace du click.
+		var isAreaClicked = area.contains(e.target);
+		console.log("The id is ",e.target.id);
+		var t = e.target.id
+		if (t == elmt.id) {
+			//si le click est sur le lien, la zone a affichee reste visible
+			area.style.display = "block";
+			//return false;
+		} else {
+			//sinon, si la zonne sible n'est pas cliquee, on fait disparaitre
+			if(!isAreaClicked){
+				console.log("The area is not clicked");
+				area.style.display = "none";
+			}
+		}
+	});
+
+}
+
+
+
+
 //document.getElementsByTagName("BODY").addEventListener("load", function(){modifierImage(); surbriance();});
-document.getElementById("box").addEventListener("mouseleave", function(){cacher()});
+
 //document.getElementById("compte").addEventListener("click", function(){afficher()});
-document.getElementById("compte").onclick = function(){afficher()};
+
+
