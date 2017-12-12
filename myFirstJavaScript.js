@@ -161,6 +161,7 @@ function surbriance() {
 	var	inscript = document.getElementById("inscriptionEtudiant");
 	var	student = document.getElementById("compteEtudiant");
 	var	lecturer = document.getElementById("compteEnseignant");
+	var tuto = document.getElementById("tuto")
 
 	if (page.id === "index") {
 		accueil.style.backgroundColor = "green";
@@ -181,7 +182,10 @@ function surbriance() {
 		student.style.backgroundColor = "green";
 	}
 	else if (page.id === "enseignant") {
-			lecturer.style.backgroundColor = "green";
+		lecturer.style.backgroundColor = "green";
+	}
+	else if (page.id === "tutoriel") {
+		tuto.style.backgroundColor = "green";
 	}
 	console.log(page.id);
 	console.log(accueil);
@@ -339,6 +343,7 @@ documentReady(function(){
 		//document.getElementById("compte2").onclick = function(){afficher()};
 		//document.getElementById("box").addEventListener("onmouseleave", function(){cacher()});
 		showAndHide('account', 'box');
+		selectPage('miniature');
 	},100);
 });
 
@@ -386,6 +391,24 @@ function showOrHide(elmt, areaId){
 		}
 	});
 
+}
+
+function selectPage(imgClass) {
+	var pages  = document.getElementsByClassName(imgClass);
+	for(var i=0; i<contenu.length; i++) {
+		pages[i].addEventListener('click', function(){
+			//chaque foi qu'un lien est clique, on pass l'element en question a une autre fonction pour afficher ou cacher la zone cachee
+			showPage(this.id);
+		});
+	}
+}
+
+function showPage(eltId) {
+	var contenu = document.getElementById(eltId).src;
+	var image= document.getElementById("currentPage").src;
+	document.addEventListener('click', function(){
+		image = contenu;
+	});
 }
 
 
