@@ -215,10 +215,18 @@ function majusCule(formField) {
 }
 
 
-
 /* ************* VALIDATION DU FORMULAIRE DE CREATION D'UN COMPTE ************/
 /* ***************************************************************************/
 
+
+/**
+function formatEmail(formField) {  // Validation de l'email.
+	var email, emailError, champ;
+	emailError = document.getElementById("message_email");
+	champ = document.getElementById(formField.id);
+	email = champ.value;
+}
+ */
 
 
 function nameLength(formField) { // Vérification des longueurs des noms et des prénoms
@@ -232,14 +240,16 @@ function nameLength(formField) { // Vérification des longueurs des noms et des 
     if (formField.id == "fname1") {
         if (longueur < 2) {
 			champ.style.borderColor= "red";
-			champ.style.backgroundColor= "#CC0000";
+			champ.style.backgroundColor= "#efc2c2";
+
 			nameError.innerHTML = "Ce champs requiert au moins 2 charactères.";
 		}else if (longueur > 12){
 			champ.style.borderColor= "red";
-			champ.style.backgroundColor= "#CC0000";
+			champ.style.backgroundColor= "#efc2c2";
 			nameError.innerHTML = "Veuillez entrer un nom de moins de 12 charactères.";
         }else {
 			champ.style.borderColor= "lightgray";
+			champ.style.backgroundColor= "";
 			nameError.innerHTML = "";
 		}
     }
@@ -247,12 +257,15 @@ function nameLength(formField) { // Vérification des longueurs des noms et des 
     if (formField.id == "fname2") {
         if (longueur < 3 ) {
 			champ.style.borderColor= "red";
+			champ.style.backgroundColor= "#efc2c2";
 			firstNameError.innerHTML = "Le prénom requiert au moins 3 charactères.";
 		}else if (longueur > 12){
 			champ.style.borderColor= "red";
+			champ.style.backgroundColor= "#efc2c2";
 			firstNameError.innerHTML = "Veuillez entrer un prénom de moins de 12 charactères.";
         }else {
 			champ.style.borderColor= "lightgray";
+			champ.style.backgroundColor= "";
 			firstNameError.innerHTML = "";
 		}
     }
@@ -267,9 +280,11 @@ function motDePasse()  {  //verification de la longueur des mots de passe
 	longueur = myPass.length;
 	if(longueur < 6) {
 		champ.style.borderColor = "red";
+		champ.style.backgroundColor= "#efc2c2";
 		message.innerHTML = " Le mot de passe requiert au moins 6 charactères.";
 	}else {
 		champ.style.borderColor= "lightgray";
+		champ.style.backgroundColor= "";
 		message.innerHTML = "";
 	}
 }
@@ -283,18 +298,22 @@ function passMatche()  {   // On vérifie si les mots de passe sont égaux
 	if(myPass != myPassAgain) {
 		message.innerHTML="Les mots de passe sont différents.";
 		champ.style.borderColor = "red";
+		champ.style.backgroundColor= "#efc2c2";
+	}
+	else {
+		message.innerHTML="";
+		champ.style.borderColor = "lightgray";
+		champ.style.backgroundColor= "";
 	}
 }
 function ageVerification()  {
-	var today = new Date(), message, champ, dateDeNaissance, anneeDeNaissance, annee, age;
+	var today = new Date(), message, champ, anneeDeNaissance, annee, age;
 	message = document.getElementById("message_age");
 	champ = document.getElementById("bday");
-	dateDeNaissance = champ.value;
-	anneeDeNaissance = dateDeNaissance.slice(0,4);
+	anneeDeNaissance = champ.value;
 	anneeDeNaissance = Number(anneeDeNaissance);
 	annee = today.getFullYear();
-	
-	console.log(dateDeNaissance);
+
     console.log(annee);
     console.log(anneeDeNaissance);
 	
@@ -343,7 +362,7 @@ documentReady(function(){
 		//document.getElementById("compte2").onclick = function(){afficher()};
 		//document.getElementById("box").addEventListener("onmouseleave", function(){cacher()});
 		showAndHide('account', 'box');
-		selectPage('miniature');
+		selectPage("miniature");
 	},100);
 });
 
@@ -395,22 +414,18 @@ function showOrHide(elmt, areaId){
 
 function selectPage(imgClass) {
 	var pages  = document.getElementsByClassName(imgClass);
-	for(var i=0; i<contenu.length; i++) {
+	for(var i=0; i<pages.length; i++) {
 		pages[i].addEventListener('click', function(){
-			//chaque foi qu'un lien est clique, on pass l'element en question a une autre fonction pour afficher ou cacher la zone cachee
-			showPage(this.id);
+			showPage(this);
 		});
 	}
 }
 
-function showPage(eltId) {
-	var contenu = document.getElementById(eltId).src;
+function showPage(elt) {
+	var contenu = document.getElementById(elt.id).src;
 	var image= document.getElementById("currentPage").src;
-	document.addEventListener('click', function(){
-		image = contenu;
-	});
+	image = contenu;
 }
-
 
 
 

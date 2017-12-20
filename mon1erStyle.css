@@ -112,7 +112,9 @@ header div {
 background-color: black;
 }
 
-
+.navig li a:hover {
+	font-size: 100%!important;
+}
 
 
 
@@ -406,9 +408,10 @@ input[type=text],
 input[type=password],
 input[type=date],
 input[type=number],
+
 input[type=email], textarea, select{
 	width: 95%;
-	text-align: center;
+	text-align: left;
 	padding: 12px 15px;
 	display: inline-block;
 	border: 1px solid #ccc;
@@ -553,6 +556,10 @@ input:focus {
 	border-color: green;
 }
 
+.checkAndCross {
+	float: right;
+	width: 20px;
+}
 
 
 
@@ -797,6 +804,7 @@ a:hover {
     color: red;
     background-color: transparent;
 	cursor: pointer;
+	font-size: 125%;
 }
 
 a:active {
@@ -827,3 +835,4 @@ img.transition_img:hover {
 	-webkit-transform: rotate(360deg);
 	transform: rotate(360deg);
 }
+

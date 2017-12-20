@@ -37,7 +37,7 @@
                 Nom:
                 </span>
                         <div>
-                            <input type="text" name="nom" required  id="fname1" onblur="majusCule(this)">
+                            <input type="text" name="nom" required  id="fname1" onblur="majusCule(this); nameLength(this)">
                         </div>
                     </div>
 
@@ -46,7 +46,7 @@
                     Prenom:
                 </span>
                         <div>
-                            <input type="text" name="prenom" required id="fname2" onblur="majusCule(this)">
+                            <input type="text" name="prenom" required id="fname2" onblur="majusCule(this); nameLength(this)">
                         </div>
                     </div>
                     <div class="court">
@@ -78,15 +78,15 @@
             <span>
                 Date de Naissance:
             </span><br>
-
                     <div class="tiers">
-                        <input type="number" name="bday" placeholder="Jour" min="1" max="31" required >
+                        <input type="number" min="1" max="31" name="bday" placeholder="Jour" required >
                     </div>
                     <div class="tiers">
-                        <input type="number" name="bmonth" placeholder="Mois" min="1" max="12" required >
+                        <input type="number" min="1" max="12" name="bmonth" placeholder="Mois" required >
                     </div>
                     <div class="tiers">
-                        <input type="number" name="byear" placeholder="Année" min="1980" max="2002" required >
+                        <input type="number" min="1970" name="byear" placeholder="Année" id="bday" required onblur="ageVerification()">
+                        <span id="message_age" class="erreur"></span>
                     </div>
 
 

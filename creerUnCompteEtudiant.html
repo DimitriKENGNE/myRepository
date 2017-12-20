@@ -67,6 +67,16 @@
                             <span id="message_nom" class="erreur"></span>
                         </div>
                     </div>
+
+                    <div class="court">
+                <span>
+                Inserer une photo de profil: <input type="file" name="img">
+                </span>
+                        <div>
+                            <!-- <span id="message_photo" class="erreur"></span> -->
+                        </div>
+                    </div>
+
                     <div>
                    <span class="gauche">
                         Genre:
@@ -83,15 +93,22 @@
                 </span>
                         </div>
                     </div>
-                    <div class="court">
-            <span>
-                Date de Naissance:
-            </span><br>
+                    <div>
+                        <span>
+                            Date de Naissance:
+                        </span><br>
 
-                        <input type="date" name="birthday" id="bday" onblur="ageVerification()" placeholder="Votre date de naissance" required >
-                        <span id="message_age" class="erreur"></span>
+                        <div class="tiers">
+                            <input type="number" min="1" max="31" name="bday" placeholder="Jour" required >
+                        </div>
+                        <div class="tiers">
+                            <input type="number" min="1" max="12" name="bmonth" placeholder="Mois" required >
+                        </div>
+                        <div class="tiers">
+                            <input type="number" min="1970" name="byear" placeholder="Année" id="bday" required onblur="ageVerification()">
+                            <span id="message_age" class="erreur"></span>
+                        </div>
                     </div>
-
 
                     <div class="court">
             <span>
@@ -161,7 +178,7 @@
                     <div>
                         <input type="reset" value="Reprendre">
                         <hr><hr>
-                        <input type="submit" value="Poursuivre">
+                        <input type="submit" value="Poursuivre" onclick="validation()">
                     </div>
                 </form>
 
