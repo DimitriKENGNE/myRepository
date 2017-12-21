@@ -71,15 +71,16 @@
             <span>
                 Date de Naissance:
             </span><br>
-
             <div class="tiers">
-                <input type="number" min="1" max="31" name="bday" placeholder="Jour" required >
+                <input type="number" id="jr" min="1" max="31" name="bday" placeholder="Jour" onblur="jrEtMois()" >
+                <span id="message_jr" class="erreur"></span>
             </div>
             <div class="tiers">
-                <input type="number" min="1" max="12" name="bmonth" placeholder="Mois" required >
+                <input type="number" id="mois" min="1" max="12" name="bmonth" placeholder="Mois"  onblur="jrEtMois()">
+                <span id="message_mois" class="erreur"></span>
             </div>
             <div class="tiers">
-                <input type="number" min="1970" name="byear" placeholder="Année" id="bday" required onblur="ageVerification()">
+                <input type="number" min="1970" name="byear" placeholder="Année" id="bday"  onblur="ageVerification(); jrEtMois()">
                 <span id="message_age" class="erreur"></span>
             </div>
 

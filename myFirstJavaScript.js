@@ -329,6 +329,57 @@ function ageVerification()  {
 	}
 }
 
+function jrEtMois () {
+	var mois, jour, messageJR, messageMois, jrPermi, moisPermi, jrValide, moisValide, anneeDeNaissance, champ;
+	champ = document.getElementById("bday");
+	anneeDeNaissance = champ.value;
+	jour= document.getElementById("jr").value;
+	jour= Number(jour);
+	mois= document.getElementById("mois").value;
+	mois= Number(mois);
+	messageJR = document.getElementById("message_jr");
+	messageMois = document.getElementById("message_mois");
+	jrPermi = true;
+	if ( jour < 1 || jour > 31 ){
+		jrPermi = false;
+		messageJR.innerHTML = "Le jour de naissance doit être > ou = à 1 et < ou = à 31";
+		document.getElementById("jr").style.borderColor = "red";
+	}else {
+		messageJR.innerHTML="";
+		document.getElementById("jr").style.borderColor = "lightgray";
+	}
+	if ( mois < 1 || mois > 12 ){
+		moisPermi = false;
+		messageMois.innerHTML = "Le mois de naissance doit être > ou = à 1 et < ou = à 12";
+		document.getElementById("mois").style.borderColor = "red";
+	}else {
+		messageMois.innerHTML="";
+		document.getElementById("mois").style.borderColor = "lightgray";
+	}
+
+	if (jrPermi){
+
+			jrValide = true;
+			if ((mois === 4 || mois === 6 || mois === 9 || mois === 11) && (jour>30)) {
+				jrValide = false;
+				messageJR.innerHTML = "Ce jour est incompatible avec le mois.";
+				document.getElementById("jr").style.borderColor = "red";
+			} else if (mois = 2 && jour > 29) {
+				jrPermi = false;
+				messageJR.innerHTML = "Pour le mois de février, le jour est < ou = à 29";
+				document.getElementById("jr").style.borderColor = "red";
+			}
+			else if ( (anneeDeNaissance%4 > 0) && (mois == 2) && (jour > 28)) {
+				jrValide = false;
+				messageJR.innerHTML = "L'année de naissance n'est pas bissectile";
+				document.getElementById("jr").style.borderColor = "red";
+			}else {
+				messageJR.innerHTML="";
+				document.getElementById("jr").style.borderColor = "lightgray";
+			}
+	}
+}
+
 /* ******************************* LES EVENEMENTS ****************************/
 /* ***************************************************************************/
 
