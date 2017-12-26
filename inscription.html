@@ -38,6 +38,7 @@
                 </span>
                         <div>
                             <input type="text" name="nom" required  id="fname1" onblur="majusCule(this); nameLength(this)">
+                            <span id="message_nom" class="erreur"></span>
                         </div>
                     </div>
 
@@ -46,7 +47,8 @@
                     Prenom:
                 </span>
                         <div>
-                            <input type="text" name="prenom" required id="fname2" onblur="majusCule(this); nameLength(this)">
+                            <input type="text" name="prenom" required id="fname2" onblur="majusCule(this); nameLength(this); withoutNumber (this,'message_prenom')">
+                            <span id="message_prenom" class="erreur"></span>
                         </div>
                     </div>
                     <div class="court">
@@ -97,7 +99,8 @@
                  Lieu de naissance:
             </span>
                         <div>
-                            <input type="text" name="bplace" id="fname3" onblur="majusCule(this)">
+                            <input type="text" name="bplace" id="fname3" onblur="majusCule(this); withoutNumber (this,'message_lieu')">
+                            <span id="message_lieu" class="erreur"></span>
                         </div>
                     </div>
 
@@ -106,7 +109,8 @@
                 Ville de résidence:
             </span>
                         <div>
-                            <input type="text" name="town" id="fname4" onblur="majusCule(this)">
+                            <input type="text" name="town" id="fname4" onblur="majusCule(this); withoutNumber (this,'message_ville')">
+                            <span id="message_ville" class="erreur"></span>
                         </div>
                     </div>
 

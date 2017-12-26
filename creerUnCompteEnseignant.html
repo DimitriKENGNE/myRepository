@@ -54,7 +54,7 @@
                 Prenom:
                 </span>
 						<div>
-							<input type="text" name="prenom" required id="fname2" onblur="majusCule(this); nameLength(this)" placeholder="Entrer votre prénom" autofocus><br>
+							<input type="text" name="prenom" required id="fname2" onblur="majusCule(this); nameLength(this); withoutNumber (this,'message_prenom')" placeholder="Entrer votre prénom" autofocus><br>
 							<span id="message_prenom" class="erreur"></span>
 						</div>
 					</div>
@@ -64,7 +64,7 @@
                     Nom:
                 </span>
 						<div>
-							<input type="text" name="nom" id="fname1" onblur="majusCule(this); nameLength(this)" placeholder="Entrer votre nom" ><br>
+							<input type="text" name="nom" id="fname1" onblur="majusCule(this); nameLength(this); withoutNumber (this,'message_nom')" placeholder="Entrer votre nom" ><br>
 							<span id="message_nom" class="erreur"></span>
 						</div>
 					</div>
@@ -89,7 +89,8 @@
                     Domaine d'enseignement:
                 </span>
 						<div>
-							<input type="text" name="nom" required id="fname3" onblur="majusCule(this)">
+							<input type="text" name="nom" required id="fname3" onblur="majusCule(this); withoutNumber (this,'message_matiere')">
+							<span id="message_matiere" class="erreur"></span>
 						</div>
 					</div>
 
@@ -98,7 +99,8 @@
                 Ville de résidence:
             </span>
 						<div>
-							<input type="text" name="town" id="fname4" onblur="majusCule(this)" placeholder="Votre ville de résidence">
+							<input type="text" name="town" id="fname4" onblur="majusCule(this); withoutNumber (this,'message_ville')" placeholder="Votre ville de résidence">
+							<span id="message_ville" class="erreur"></span>
 						</div>
 					</div>
 
@@ -140,7 +142,7 @@
 
 					<div class="court">
             <span>
-                Mot de pass
+                Mot de passe
             </span>
 						<div>
 							<input type="password" name="myPass" id="myPass" required onblur="motDePasse()" placeholder="Créez votre mot de passe"><br>

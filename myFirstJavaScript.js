@@ -229,10 +229,35 @@ function formatEmail(formField) {  // Validation de l'email.
  */
 
 
-function nameLength(formField) { // Vérification des longueurs des noms et des prénoms
-    var nom, longueur,champ,nameError, firstNameError;
-    nameError = document.getElementById("message_nom");
-    firstNameError = document.getElementById("message_prenom");
+
+function withoutNumber (elt, msgId) {
+	var champ, valeur, isCorrect, i, messageError;
+	champ = document.getElementById(elt.id);
+	valeur = champ.value;
+	messageError = document.getElementById(msgId);
+	isCorrect = true;
+	for (i=0; i < valeur.length; i++) {
+		if (!isNaN(valeur[i])) {
+			isCorrect = false;
+			break;
+		}
+	}
+	if (!isCorrect) {
+		messageError.innerHTML = "Ce champ ne doit pas contenir de chiffre.";
+		champ.style.borderColor = "red";
+		champ.style.backgroundColor= "#efc2c2";
+	} else {
+		messageError.innerHTML = "";
+		champ.style.borderColor = "lightgray";
+		champ.style.backgroundColor= "";
+	}
+}
+
+
+
+function nameLength(formField, msgId) { // Vérification des longueurs des noms et des prénoms
+    var nom, longueur,champ,nameError, firstNameError,messageError;
+	messageError = document.getElementById(msgId);
     champ = document.getElementById(formField.id);
     nom = champ.value;
 	longueur = nom.length;
@@ -241,16 +266,13 @@ function nameLength(formField) { // Vérification des longueurs des noms et des 
         if (longueur < 2) {
 			champ.style.borderColor= "red";
 			champ.style.backgroundColor= "#efc2c2";
-
-			nameError.innerHTML = "Ce champs requiert au moins 2 charactères.";
+			messageError.innerHTML = "Ce champs requiert au moins 2 charactères.";
 		}else if (longueur > 12){
 			champ.style.borderColor= "red";
 			champ.style.backgroundColor= "#efc2c2";
-			nameError.innerHTML = "Veuillez entrer un nom de moins de 12 charactères.";
+			messageError.innerHTML = "Veuillez entrer un nom de moins de 12 charactères.";
         }else {
-			champ.style.borderColor= "lightgray";
-			champ.style.backgroundColor= "";
-			nameError.innerHTML = "";
+			withoutNumber(formField,msgId);
 		}
     }
 
@@ -258,15 +280,13 @@ function nameLength(formField) { // Vérification des longueurs des noms et des 
         if (longueur < 3 ) {
 			champ.style.borderColor= "red";
 			champ.style.backgroundColor= "#efc2c2";
-			firstNameError.innerHTML = "Le prénom requiert au moins 3 charactères.";
+			messageError.innerHTML = "Le prénom requiert au moins 3 charactères.";
 		}else if (longueur > 12){
 			champ.style.borderColor= "red";
 			champ.style.backgroundColor= "#efc2c2";
-			firstNameError.innerHTML = "Veuillez entrer un prénom de moins de 12 charactères.";
+			messageError.innerHTML = "Veuillez entrer un prénom de moins de 12 charactères.";
         }else {
-			champ.style.borderColor= "lightgray";
-			champ.style.backgroundColor= "";
-			firstNameError.innerHTML = "";
+			withoutNumber(formField,msgId);
 		}
     }
 
@@ -323,9 +343,11 @@ function ageVerification()  {
 	if ( age < 15 || age > 35 ) {
 		message.innerHTML="Veuillez vérifier votre année de naissance.";
 		champ.style.borderColor = "red";
+		champ.style.backgroundColor= "#efc2c2";
 	}else {
 		message.innerHTML="";
 		champ.style.borderColor = "lightgray";
+		champ.style.backgroundColor= "";
 	}
 }
 
@@ -344,17 +366,21 @@ function jrEtMois () {
 		jrPermi = false;
 		messageJR.innerHTML = "Le jour de naissance doit être > ou = à 1 et < ou = à 31";
 		document.getElementById("jr").style.borderColor = "red";
+		document.getElementById("jr").style.backgroundColor= "#efc2c2";
 	}else {
 		messageJR.innerHTML="";
 		document.getElementById("jr").style.borderColor = "lightgray";
+		document.getElementById("jr").style.backgroundColor= "";
 	}
 	if ( mois < 1 || mois > 12 ){
 		moisPermi = false;
 		messageMois.innerHTML = "Le mois de naissance doit être > ou = à 1 et < ou = à 12";
 		document.getElementById("mois").style.borderColor = "red";
+		document.getElementById("mois").style.backgroundColor= "#efc2c2";
 	}else {
 		messageMois.innerHTML="";
 		document.getElementById("mois").style.borderColor = "lightgray";
+		document.getElementById("mois").style.backgroundColor= "#efc2c2";
 	}
 
 	if (jrPermi){
@@ -364,21 +390,26 @@ function jrEtMois () {
 				jrValide = false;
 				messageJR.innerHTML = "Ce jour est incompatible avec le mois.";
 				document.getElementById("jr").style.borderColor = "red";
-			} else if (mois = 2 && jour > 29) {
-				jrPermi = false;
+				document.getElementById("jr").style.backgroundColor= "#efc2c2";
+			} else if (mois == 2 && jour > 29) {
 				messageJR.innerHTML = "Pour le mois de février, le jour est < ou = à 29";
 				document.getElementById("jr").style.borderColor = "red";
+				document.getElementById("jr").style.backgroundColor= "#efc2c2";
 			}
 			else if ( (anneeDeNaissance%4 > 0) && (mois == 2) && (jour > 28)) {
 				jrValide = false;
 				messageJR.innerHTML = "L'année de naissance n'est pas bissectile";
 				document.getElementById("jr").style.borderColor = "red";
+				document.getElementById("jr").style.backgroundColor= "#efc2c2";
 			}else {
 				messageJR.innerHTML="";
 				document.getElementById("jr").style.borderColor = "lightgray";
+				document.getElementById("jr").style.backgroundColor= "";
 			}
 	}
 }
+
+
 
 /* ******************************* LES EVENEMENTS ****************************/
 /* ***************************************************************************/
