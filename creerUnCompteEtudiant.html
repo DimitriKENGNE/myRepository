@@ -53,7 +53,7 @@
                 Prenom:
                 </span>
                         <div>
-                            <input type="text" name="prenom" required id="fname2" onblur="majusCule(this); withoutNumber (this,'message_prenom'); nameLength(this)" placeholder="Entrer votre prénom" autofocus><br>
+                            <input type="text" name="prenom" required id="fname2" onblur="majusCule(this); nameLength(this, 'message_prenom')" placeholder="Entrer votre prénom" autofocus><br>
                             <span id='message_prenom' class="erreur"></span>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     Nom:
                 </span>
                         <div>
-                            <input type="text" name="nom" id="fname1" onblur="majusCule(this); withoutNumber (this,'message_nom'); nameLength(this)" placeholder="Entrer votre nom" ><br>
+                            <input type="text" name="nom" id="fname1" onblur="majusCule(this); nameLength(this, 'message_nom')" placeholder="Entrer votre nom" ><br>
                             <span id="message_nom" class="erreur"></span>
                         </div>
                     </div>

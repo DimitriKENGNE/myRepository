@@ -272,7 +272,7 @@ function nameLength(formField, msgId) { // Vérification des longueurs des noms 
 			champ.style.backgroundColor= "#efc2c2";
 			messageError.innerHTML = "Veuillez entrer un nom de moins de 12 charactères.";
         }else {
-			withoutNumber(formField,msgId);
+			withoutNumber(formField, msgId);
 		}
     }
 
@@ -286,7 +286,7 @@ function nameLength(formField, msgId) { // Vérification des longueurs des noms 
 			champ.style.backgroundColor= "#efc2c2";
 			messageError.innerHTML = "Veuillez entrer un prénom de moins de 12 charactères.";
         }else {
-			withoutNumber(formField,msgId);
+			withoutNumber(formField, msgId);
 		}
     }
 
@@ -498,7 +498,8 @@ function selectPage(imgClass) {
 	var pages  = document.getElementsByClassName(imgClass);
 	for(var i=0; i<pages.length; i++) {
 		pages[i].addEventListener('click', function(){
-			showPage(this);
+			showPage(pages[i]);
+			console.log(pages[i])
 		});
 	}
 }
@@ -509,6 +510,90 @@ function showPage(elt) {
 	image = contenu;
 }
 
+
+
+
+function loadDoc(url, cFunction) {
+	var xhttp;
+	xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			cFunction(this);
+		}
+	};
+	xhttp.open("GET", url, true);
+	xhttp.send();
+}
+
+function connexion() {
+	// action goes here
+	var identif, password, etudiants, trouve, pass, x, i;
+	identif = document.getElementById("identifiant");
+	identif = identif.value;
+	password = document.getElementById("pass");
+	password = password.value;
+	etudiants = JSON.parse(etudiant.json);
+	/*etudiants = [{ nom:"KENGNE",
+				prenom:"DIMITRI",
+				identifiant:"Dims",
+				email:"m.dimitri.kengne@gmail.com",
+				motDePasse:"lewebmaster",
+				matricule:"18A000"}, { nom:"Eto'o",
+				prenom:"Samuel",
+				identifiant:"pichichi",
+				email:"samueletoo@yahoo.fr",
+				motDePasse:"mamaman",
+				matricule:"18A001"}, { nom:"Drogba",
+				prenom:"Didier",
+				identifiant:"fusee",
+				email:"didierdrogba@yahoo.fr",
+				motDePasse:"monpapa",
+				matricule:"18A002"}, { nom:"Messi",
+				prenom:"Lionel",
+				identifiant:"soulierd'or" ,
+				email:"lionelmessi@yahoo.fr",
+				motDePasse:"mamami",
+				matricule:"18A003"}, { nom:"Ronaldo",
+				prenom:"Christiano",
+				identifiant:"leCR" ,
+				email:"christianoronaldo@yahoo.fr",
+				motDePasse:"monpapi",
+				matricule:"18A004"}, { nom:"Suarès",
+				prenom:"Luis",
+				identifiant:"phenomene",
+				email:"luissuares@yahoo.fr",
+				motDePasse:"macherie",
+				matricule:"18A005"}];                  */
+
+	console.log(etudiants.length);
+	console.log(identif);
+	console.log(password);
+
+	document.getElementById("message").innerHTML = "";
+	trouve = false;
+	for (i=0; i < etudiants.length; i++ ) {
+		console.log(etudiants[i].nom);
+		if (etudiants[i].identifiant == identif) {
+			trouve = true;
+			pass = etudiants[i].motDePasse;
+			break;
+		} else if (etudiants[i].email == identif) {
+			trouve = true;
+			pass = etudiants[i].motDePasse;
+			break;
+		}
+	}
+	if (trouve) {
+		if (pass == password) {
+			x = "Identifiant et Mot de passe validés"
+		} else {
+			x = "Mot de passe incorect"
+		}
+	} else {
+	x = "Etudiant inexistant. Veuillez créer un compte.";
+	}
+	document.getElementById("message").innerHTML = x;
+}
 
 
 //document.getElementsByTagName("BODY").addEventListener("load", function(){modifierImage(); surbriance();});

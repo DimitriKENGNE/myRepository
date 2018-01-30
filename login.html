@@ -11,14 +11,15 @@
                         Mon Compte
                     </div>
                 </div>
+                <span id="message" class="erreur"></span>
 				<span class="gauche">
-					Nom d'utilisateur ou Numéro de téléphone
+					Nom d'utilisateur ou Adresse e-mail
 				</span>
 				<span class="droite">
 					<a href="#">J'ai oublié</a>
 				</span>
                 <div>
-                    <input type="text" name="identifiant" required autofocus>
+                    <input type="text" name="identifiant" id="identifiant" required autofocus>
                 </div>
 				<span class="gauche">
 					Mot de passe:
@@ -27,7 +28,7 @@
 					<a href="#">J'ai oublié</a>
 				</span>
                 <div>
-                    <input type="password" name="pass" required >
+                    <input type="password" name="pass" id="pass" required >
                 </div>
                 <div>
                     <input type="checkbox" name="registre" value="H" >
@@ -35,7 +36,7 @@
 						Rester connecté(e)
 					</span>
                 </div>
-                <input type="submit" value="Se connecter">
+                <button type="button" value="Se connecter" onclick="connexion()">Se connecter<button
                 <div>
                     <hr>
 					<span>

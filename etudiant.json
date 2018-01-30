@@ -1,0 +1,47 @@
+{
+
+  "etudiant":[
+    { "nom":"KENGNE",
+      "prenom":"DIMITRI",
+      "identifiant":"Dims",
+      "email":"m.dimitri.kengne@gmail.com",
+      "mot_de_pass":"lewebmaster",
+      "matricule":"18A000"},
+
+    { "nom":"Eto'o",
+      "prenom":"Samuel",
+      "identifiant":"pichichi",
+      "e-mail":"samueletoo@yahoo.fr",
+      " motDePasse":"mamaman",
+      "matricule":"18A001"},
+
+    { "nom":"Drogba",
+      "prenom":"Didier",
+      "identifiant":"fusee",
+      "e-mail":"didierdrogba@yahoo.fr",
+      " motDePasse":"monpapa",
+      "matricule":"18A002"},
+
+    { "nom":"Messi",
+      "prenom":"Lionel",
+      "identifiant":"soulierd'or" ,
+      "e-mail":"lionelmessi@yahoo.fr",
+      " motDePasse":"mamami",
+      "matricule":"18A003"},
+
+    { "nom":"Ronaldo",
+      "prenom":"Christiano",
+      "identifiant":"leCR" ,
+      "e-mail":"christianoronaldo@yahoo.fr",
+      " motDePasse":"monpapi",
+      "matricule":"18A004"},
+
+    { "nom":"Suarès",
+      "prenom":"Luis",
+      "identifiant":"phenomene",
+      "e-mail":"luissuares@yahoo.fr",
+      " motDePasse":"macherie",
+      "matricule":"18A005"}
+  ]
+}
+
