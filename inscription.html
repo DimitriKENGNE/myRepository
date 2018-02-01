@@ -30,7 +30,7 @@
                 <div>
                     <span>Vous êtes étudiant admis à l'université de Douala, poursuivez votre <span class="color:red;"><b>inscription</b></span> ici.</span>
                 </div>
-                <form action="inexistante.php">
+                <form action="your_entry.php" method="post">
 
                     <div class="court">
                 <span class="gauche">
@@ -56,7 +56,7 @@
                             Ecole ou Faculté:
                         </span>
                         <div>
-                            <select name="nation">
+                            <select name="ecole">
                                 <option value="ENS">ENS</option>
                                 <option value="ENSET">ENSET</option>
                                 <option value="polytech">Polytechnique</option>
@@ -73,7 +73,7 @@
                  Matricule:
             </span>
                         <div>
-                            <input type="text" name="bplace" id="fname6" onblur="majusCule(this)">
+                            <input type="text" name="matricule" id="fname6" onblur="majusCule(this)">
                         </div>
                     </div>
 
@@ -89,7 +89,7 @@
                         <span id="message_mois" class="erreur"></span>
                     </div>
                     <div class="tiers">
-                        <input type="number" min="1970" name="byear" placeholder="Année" id="bday"  onblur="ageVerification(); jrEtMois()">
+                        <input type="number" min="1970" name="byear" placeholder="Année" id="byear"  onblur="ageVerification(); jrEtMois()">
                         <span id="message_age" class="erreur"></span>
                     </div>
 
