@@ -527,67 +527,51 @@ function loadDoc(url, cFunction) {
 
 function connexion() {
 	// action goes here
-	var identif, password, etudiants, trouve, pass, x, i;
+	var identif, password, etudiants, trouve, userPicture, userName, pass, x, y, i;
 	identif = document.getElementById("identifiant");
 	identif = identif.value;
 	password = document.getElementById("pass");
 	password = password.value;
-	etudiants = JSON.parse(etudiant.json);
-	/*etudiants = [{ nom:"KENGNE",
-				prenom:"DIMITRI",
-				identifiant:"Dims",
-				email:"m.dimitri.kengne@gmail.com",
-				motDePasse:"lewebmaster",
-				matricule:"18A000"}, { nom:"Eto'o",
-				prenom:"Samuel",
-				identifiant:"pichichi",
-				email:"samueletoo@yahoo.fr",
-				motDePasse:"mamaman",
-				matricule:"18A001"}, { nom:"Drogba",
-				prenom:"Didier",
-				identifiant:"fusee",
-				email:"didierdrogba@yahoo.fr",
-				motDePasse:"monpapa",
-				matricule:"18A002"}, { nom:"Messi",
-				prenom:"Lionel",
-				identifiant:"soulierd'or" ,
-				email:"lionelmessi@yahoo.fr",
-				motDePasse:"mamami",
-				matricule:"18A003"}, { nom:"Ronaldo",
-				prenom:"Christiano",
-				identifiant:"leCR" ,
-				email:"christianoronaldo@yahoo.fr",
-				motDePasse:"monpapi",
-				matricule:"18A004"}, { nom:"Suarès",
-				prenom:"Luis",
-				identifiant:"phenomene",
-				email:"luissuares@yahoo.fr",
-				motDePasse:"macherie",
-				matricule:"18A005"}];                  */
+	etudiants = '{ "data" :[{ "nom":"KENGNE", "prenom":"DIMITRI", "identifiant":"Dims", "email":"m.dimitri.kengne@gmail.com", "motDePass":"lewebmaster", "matricule":"18A000", "photo":"PHOTO.jpg"},'+
+		'{ "nom":"Etoo", "prenom":"Samuel", "identifiant":"pichichi", "e-mail":"samueletoo@yahoo.fr", "motDePasse":"mamaman", "matricule":"18A001", "photo":"etoo.jpg"},' +
+		'{ "nom":"Drogba","prenom":"Didier", "identifiant":"fusee", "e-mail":"didierdrogba@yahoo.fr", "motDePasse":"monpapa", "matricule":"18A002", "photo":"drogba.jpg"},' +
+		'{ "nom":"Messi", "prenom":"Lionel", "identifiant":"soulierdor" , "e-mail":"lionelmessi@yahoo.fr", "motDePasse":"mamami", "matricule":"18A003", "photo":"messi.jpg"},'+
+		'{ "nom":"Ronaldo","prenom":"Christiano", "identifiant":"leCR" , "e-mail":"christianoronaldo@yahoo.fr", "motDePasse":"monpapi", "matricule":"18A004", "photo":"ronaldo.jpg"},'+
+		'{ "nom":"Suarès","prenom":"Luis", "identifiant":"phenomene", "e-mail":"luissuares@yahoo.fr", "motDePasse":"macherie", "matricule":"18A005", "photo":"suarez.jpg"}]}';
 
-	console.log(etudiants.length);
+	etudiants = JSON.parse(etudiants);
+
+
+	console.log(etudiants.data.length);
 	console.log(identif);
 	console.log(password);
 
 	document.getElementById("message").innerHTML = "";
 	trouve = false;
-	for (i=0; i < etudiants.length; i++ ) {
-		console.log(etudiants[i].nom);
-		if (etudiants[i].identifiant == identif) {
+	for (i=0; i < etudiants.data.length; i++ ) {
+		console.log(etudiants.data[i].nom);
+		if (etudiants.data[i].identifiant === identif) {
 			trouve = true;
-			pass = etudiants[i].motDePasse;
+			pass = etudiants.data[i].motDePasse;
+			userPicture = etudiants.data[i].photo;
+			userName = etudiants.data[i].prenom + etudiants.data[i].nom;
 			break;
-		} else if (etudiants[i].email == identif) {
+		} else if (etudiants.data[i].email === identif) {
 			trouve = true;
-			pass = etudiants[i].motDePasse;
+			pass = etudiants.data[i].motDePasse;
+			userPicture = etudiants.data[i].photo;
+			userName = etudiants.data[i].prenom + " " + etudiants.data[i].nom;
 			break;
 		}
 	}
+	console.log(trouve);
+	console.log(pass);
 	if (trouve) {
 		if (pass == password) {
-			x = "Identifiant et Mot de passe validés"
+			document.getElementById("message").innerHTML = "<img src=' " + userPicture + " ' alt='User Picture'>";
+			document.getElementById("message1").innerHTML = userName;
 		} else {
-			x = "Mot de passe incorect"
+			x = "Mot de passe incorect";
 		}
 	} else {
 	x = "Etudiant inexistant. Veuillez créer un compte.";

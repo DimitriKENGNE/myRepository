@@ -787,6 +787,9 @@ span.erreur {
 	color: red;
 	font-size: 75%;
 }
+span.succ {
+	color : green;
+}
 
 a:link {
     color: green; 
