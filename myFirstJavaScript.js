@@ -568,7 +568,7 @@ function connexion() {
 	console.log(pass);
 	if (trouve) {
 		if (pass == password) {
-			document.getElementById("message").innerHTML = "<img src=' " + userPicture + " ' alt='User Picture'>";
+			x = "<img src=' " + userPicture + " ' alt='User Picture'>";
 			document.getElementById("message1").innerHTML = userName;
 		} else {
 			x = "Mot de passe incorect";
